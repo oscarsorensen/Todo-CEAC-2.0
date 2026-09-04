@@ -1,0 +1,9 @@
+.DS_Store
+chroma_data/
+videotutoriales/
+chroma2-env/
+001-instalar.chromadb.sh
+008-entranamiento
+.hf-cache/
+venv/
+lora-cpu-lowram/
