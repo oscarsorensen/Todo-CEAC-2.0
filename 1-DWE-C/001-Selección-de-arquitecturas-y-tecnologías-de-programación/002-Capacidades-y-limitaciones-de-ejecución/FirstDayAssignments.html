@@ -25,6 +25,18 @@
 
     <p id="resultadoDondeEstas"></p>
 
+    <h1>Manual URL check</h1>
+    
+    <input type="url" id="myurl" placeholder="random-url.com"> 
+    <button onclick="myurl()">Try Url</button>
+
+
+    <h1>My GitHub</h1>
+
+
+    <button onclick="abrirVentana()">
+        Abrir mi favorito web
+    </button>
 
     <script>
 
@@ -101,6 +113,24 @@
 
         }
 
+
+        function abrirVentana() {
+
+        window.open(
+            "https://github.com/oscarsorensen",
+            "_blank"
+        );
+
+        }
+
+
+        function myurl (){
+            
+            const url = document.getElementById("myurl").value;
+            window.open(url, "_blank");
+
+        }
+  
 
     </script>
 
