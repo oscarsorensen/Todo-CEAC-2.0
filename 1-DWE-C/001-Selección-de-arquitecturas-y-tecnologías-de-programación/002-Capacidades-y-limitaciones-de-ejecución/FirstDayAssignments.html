@@ -16,6 +16,45 @@
 
     <p id="resultado"></p>
 
+    <h1>Storage Name</h1>
+    
+    <input
+        type="text"
+        id="nombre"
+        placeholder="Escribe tu nombre"
+    >
+    <input
+    type="text"
+    id="surnombre"
+    placeholder="Escribe tu surnombre"
+    >
+    <input
+    type="number"
+    id="age"
+    placeholder="Escribe tu age"
+    >
+    <input
+    type="date"
+    id="date"
+    placeholder="Escribe tu date"
+    >
+
+
+    <button onclick="guardarNombre()">
+        Guardar
+    </button>
+
+    <button onclick="mostrarNombre()">
+        Recuperar
+    </button>
+
+    <button onclick="borrarNombre()">
+        Borrar
+    </button>
+
+    <p id="resultado_nombre"></p>
+
+
 
     <h1>Comprueba si estás en Valencia</h1>
 
@@ -131,6 +170,42 @@
 
         }
   
+
+
+
+            function guardarNombre() {
+
+    const nombre =
+        document.getElementById("nombre").value;
+
+    localStorage.setItem("nombre", nombre);
+
+    }
+
+
+    function mostrarNombre() {
+
+    const nombre =
+        localStorage.getItem("nombre");
+
+    document.getElementById("resultado_nombre").textContent =
+        "Nombre almacenado: " + nombre;
+
+    }
+
+
+    function borrarNombre() {
+
+    localStorage.removeItem("nombre");
+
+    document.getElementById("resultado_nombre").textContent =
+        "Información eliminada";
+
+    }
+
+
+
+
 
     </script>
 
