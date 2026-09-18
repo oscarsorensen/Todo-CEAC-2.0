@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocalización</title>
+</head>
+
+<body>
+
+    <h1>Geolocalización</h1>
+
+    <button onclick="obtenerUbicacion()">
+        Obtener mi ubicación
+    </button>
+
+    <p id="resultado"></p>
+
+
+    <h1>Comprueba si estás en Valencia</h1>
+
+    <button onclick="estasEnValencia()">
+        ¿Estoy en Valencia?
+    </button>
+
+    <p id="resultadoDondeEstas"></p>
+
+
+    <script>
+
+        //original kode
+        function obtenerUbicacion() {
+
+            const resultado =
+                document.getElementById("resultado");
+
+            if (!navigator.geolocation) {
+
+                resultado.textContent =
+                    "El navegador no dispone de geolocalización.";
+
+                return;
+
+            }
+
+            resultado.textContent =
+                "Solicitando ubicación...";
+
+            navigator.geolocation.getCurrentPosition(
+
+                function (posicion) {
+
+                    resultado.textContent =
+                        "Latitud: " +
+                        posicion.coords.latitude +
+                        " | Longitud: " +
+                        posicion.coords.longitude;
+
+                },
+
+                function () {
+
+                    resultado.textContent =
+                        "No se ha podido obtener la ubicación.";
+
+                }
+
+            );
+
+        }
+
+
+        /* ── valencia delen ── */
+
+        function estasEnValencia() {
+
+            const resultadoDondeEstas =
+                document.getElementById("resultadoDondeEstas");
+
+
+            navigator.geolocation.getCurrentPosition( //kalder denne geolocation igen, siden den jo ikke eksisterer længere, fra den tidligere funktion.
+
+                function (posicion) {
+
+                    if (
+                        posicion.coords.latitude  >= 39.35 &&
+                        posicion.coords.latitude  <= 39.55 &&
+                        posicion.coords.longitude >= -0.45 &&
+                        posicion.coords.longitude <= -0.25
+                    ) {
+                        resultadoDondeEstas.textContent =
+                            "Estás en Valencia!";
+                    } else {
+                        resultadoDondeEstas.textContent =
+                            "No estás en Valencia.";
+                    }
+
+                },
+
+            );
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
