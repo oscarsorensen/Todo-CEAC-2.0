@@ -7,3 +7,4 @@ chroma2-env/
 .hf-cache/
 venv/
 lora-cpu-lowram/
+node_modules/
