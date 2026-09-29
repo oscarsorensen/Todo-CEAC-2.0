@@ -1,10 +1,9 @@
-<?php include "config.php";?>
 <!doctype html>
 <html>
 	<head>
   	<style>
     	:root{
-      	--colorcorporativo:<?php echo $color; ?>;
+      	--colorcorporativo:red;
       }
     	html,body{padding:0px;margin:0px;width:100%;height:100%;}
       body{display:flex;flex-direction:column;}
@@ -25,5 +24,13 @@
       <section>
       </section>
     </main>
+    <script>
+    	fetch("leeconfiguracion.php")
+      .then(function(resultado){return resultado.json()})
+      .then(function(datos){
+      	console.log(datos)
+        document.documentElement.style.setProperty("--colorcorporativo", datos.color)
+      })
+    </script>
   </body>
 </html>
