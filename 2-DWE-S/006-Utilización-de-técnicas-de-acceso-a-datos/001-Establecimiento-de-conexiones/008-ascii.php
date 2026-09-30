@@ -1,0 +1,10 @@
+<?php
+	$nombre = "Oscar Sorensen";
+  
+  echo $nombre;
+  echo $nombre[0];
+  echo "<br>";
+  for($i = 0;$i<strlen($nombre);$i++){
+  	echo ord($nombre[$i])."<br>";
+  }
+?>
