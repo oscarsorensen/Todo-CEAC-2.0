@@ -1,0 +1,11 @@
+{
+    "nombre": "Oscar",
+    "apellidos": "Sorensen",
+    "profesion": "Studente",
+    "tecnologias": [
+        "PHP",
+        "Python",
+        "JavaScript",
+        "SQL"
+    ]
+}
