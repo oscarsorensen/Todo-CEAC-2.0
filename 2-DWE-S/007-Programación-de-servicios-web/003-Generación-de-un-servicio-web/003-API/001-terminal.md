@@ -1,0 +1,1 @@
+curl "http://localhost:8080/CEAC/CEAC-Year-Two/2-DWE-S/007-Programaci%c3%b3n-de-servicios-web/002-Est%c3%a1ndares-y-arquitecturas-actuales.-Formatos-de-intercambio-de-datos/001-API/SoftwareA/api.php"
