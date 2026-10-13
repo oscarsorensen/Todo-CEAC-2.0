@@ -2,8 +2,9 @@
 <html>
 	<head>
   	<style>
-    	main{display:grid; grid-template-columns: repeat(7, 1fr);}
-      .dia{border:1px solid grey;}
+    	main{display:grid; grid-template-columns: repeat(7, 1fr);
+      font-family:sans-serif;}
+      .dia{border:1px solid grey;height:40px;padding:5px;}
     </style>
   </head>
   <body>

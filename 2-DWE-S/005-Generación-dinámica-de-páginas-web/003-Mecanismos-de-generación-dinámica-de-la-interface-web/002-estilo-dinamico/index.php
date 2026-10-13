@@ -15,7 +15,7 @@
   </head>
   <body>
   	<header>
-    	jocarsa | software
+    	osso | software
     </header>
     <main>
     	<nav>	

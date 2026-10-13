@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Calendario 2026</title>
+    <title>Calendario 2026 · Oscar Sorensen</title>
 
     <style>
         *{

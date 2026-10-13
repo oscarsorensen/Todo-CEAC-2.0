@@ -4,14 +4,14 @@ include "vista.php";
 include "modelo.php";
 include "controlador.php";
 
-$clientes = JocarsaModelo::dameDatosEstatico(
+$clientes = OssoModelo::dameDatosEstatico(
     "clientes.db",
     "clientes"
 );
 
 $json = coseJSON($clientes);
 
-$vista = new JocarsaVista($json);
+$vista = new OssoVista($json);
 $vista->pintaTabla();
 
 ?>

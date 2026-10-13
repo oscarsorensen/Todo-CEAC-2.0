@@ -6,7 +6,7 @@
   $datos = dameDatos("clientes");
   $json = coseJson($datos);
   
-  $vista = new JocarsaVista($json);
+  $vista = new OssoVista($json);
   $vista->pintaFormulario();
   
 ?>

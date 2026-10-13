@@ -1,9 +1,11 @@
 <?php
-  $fecha = date('YmdHis');
+	$fecha = date('Y').date('m').date('d').date('H').date('i').date('s');
   $curl = curl_init("https://www.aemet.es/xml/municipios/localidad_46250.xml");
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   $respuesta = curl_exec($curl);
+  curl_close($curl);
   echo $respuesta;
-  if (!is_dir("predicciones")) mkdir("predicciones", 0777);
-  file_put_contents("predicciones/prediccion".$fecha.".xml", $respuesta);
+  $archivo = fopen("predicciones/prediccion".$fecha.".xml",'w');
+  fwrite($archivo,$respuesta);
+  fclose($archivo);
 ?>

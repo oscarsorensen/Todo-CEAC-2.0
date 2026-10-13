@@ -18,3 +18,5 @@ Si estáis en Linux, lo más rápido es:
 sudo apt install apache2
 sudo apt install php
 sudo apt install mysql-server
+sudo apt install sqlite3
+sudo apt install php-sqlite3

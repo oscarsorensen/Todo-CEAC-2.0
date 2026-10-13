@@ -1,8 +1,12 @@
 <?php
-$handle = fopen("datos.csv", "r");
 
-while (($data = fgetcsv($handle, null, ",", "\"", "")) !== false) {
-    print_r($data);
+$archivo = fopen("datos.csv", "r");
+$conjunto = [];
+while (($fila = fgetcsv($archivo)) !== false) {
+    $conjunto[] = $fila;
 }
+var_dump($conjunto);
 
-fclose($handle);
+fclose($archivo);
+
+?>

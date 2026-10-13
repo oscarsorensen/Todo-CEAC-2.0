@@ -2,7 +2,7 @@
 
 include "OssoJSON.php";
 
-$jocarsaJSON = new JocarsaJSON();
+$ossoJSON = new OssoJSON();
 
 
 // ================================
@@ -28,7 +28,7 @@ $ossoJSON->guardarJSON("datos.json", $datos);
 // CARGAR JSON
 // ================================
 
-$datosCargados = $OssoJSON->cargarJSON("datos.json");
+$datosCargados = $ossoJSON->cargarJSON("datos.json");
 
 print_r($datosCargados);
 

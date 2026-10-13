@@ -28,7 +28,7 @@ foreach($xml->prediccion->dia as $dia){
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Temperaturas AEMET</title>
+<title>Temperaturas AEMET · Oscar Sorensen</title>
 
 <style>
 

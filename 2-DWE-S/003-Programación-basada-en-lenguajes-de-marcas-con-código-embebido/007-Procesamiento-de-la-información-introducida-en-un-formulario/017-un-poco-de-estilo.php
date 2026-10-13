@@ -9,13 +9,13 @@
 			body{
 				margin:0;
 				font-family:Arial, sans-serif;
-				background:#f0f0f1;
-				color:#1d2327;
+				background:#f4efe9;
+				color:#2b2d42;
 			}
 			
 			header{
 				height:50px;
-				background:#1d2327;
+				background:#2b2d42;
 			}
 			
 			main{
@@ -25,7 +25,7 @@
 			
 			nav{
 				width:200px;
-				background:#2c3338;
+				background:#33354d;
 			}
 			
 			section{
@@ -33,7 +33,7 @@
 				margin:20px;
 				padding:20px;
 				background:white;
-				border:1px solid #c3c4c7;
+				border:1px solid #d8cfc4;
 				box-shadow:0 1px 1px rgba(0,0,0,0.04);
 			}
 		</style>

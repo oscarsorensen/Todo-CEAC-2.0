@@ -6,6 +6,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $respuesta = curl_exec($curl);
 
+curl_close($curl);
 
 $xml = simplexml_load_string($respuesta);
 

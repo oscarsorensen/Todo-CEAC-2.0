@@ -20,3 +20,6 @@ C + C++ + PERL - CGI Common Gateway Interface
 1995 - Java - 2000 - Java Enterprise (JEE)
 
 2010 - Web interactiva - AJAX - fetch + sockets
+
+Tecnologías tales como NodeJS
+

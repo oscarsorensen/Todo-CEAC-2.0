@@ -57,7 +57,7 @@ $clientes = new OssoCSV("datos.csv");
 //var_dump($clientes->listar());
 
 
-// WHERE nombre = Jose Vicente
+// WHERE nombre = Oscar
 var_dump(
     $clientes->buscar("nombre", "Elena")
 );

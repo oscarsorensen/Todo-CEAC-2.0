@@ -8,3 +8,11 @@ chroma2-env/
 venv/
 lora-cpu-lowram/
 node_modules/
+2-DWE-S/100-Entregas-Formacion-Jocarsa/instructions.md
+200-Ejemplos-IA-NO-ENTREGAR/
+2-DWE-S/100-Entregas-Formacion-Jocarsa/*/1.-Ejercicios/
+**/*-streaming/repositorio/
+**/*-streaming/video/
+*-streaming.zip
+predicciones/
+.*.history/

@@ -1,9 +1,10 @@
 <?php
-  $accion = $_GET['accion'] ?? '';
+	$accion = $_GET['accion'];
   $db = new PDO("sqlite:chat.db");
 
   switch($accion){
-    case "get":
+  	case "get":
+    	// Dame  todos los mensajes
       $resultado = $db->query("SELECT * FROM mensajes");
       $mensajes = [];
       while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
@@ -12,6 +13,7 @@
       echo json_encode($mensajes);
       break;
     case "post":
+    	// Te envío un mensaje
       break;
   }
 ?>

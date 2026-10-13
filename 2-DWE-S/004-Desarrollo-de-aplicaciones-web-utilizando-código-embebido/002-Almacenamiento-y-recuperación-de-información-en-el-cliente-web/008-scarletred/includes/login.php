@@ -4,7 +4,7 @@
     <style>
       body{
         font-family:Arial;
-        background:#f0f0f1;
+        background:#f4efe9;
       }
       form{
         width:300px;

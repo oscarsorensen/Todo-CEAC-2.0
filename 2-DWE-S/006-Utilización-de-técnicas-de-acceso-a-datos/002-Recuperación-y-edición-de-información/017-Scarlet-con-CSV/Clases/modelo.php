@@ -1,13 +1,13 @@
 <?php
-require_once __DIR__ . '/JocarsaCSV.php';
+require_once __DIR__ . '/OssoCSV.php';
 
-class JocarsaModelo {
-    private JocarsaCSV $bd;
+class OssoModelo {
+    private OssoCSV $bd;
     private string $basededatos;
     private array $clavesPrimarias;
 
     public function __construct(string $rutaDatos, string $basededatos, array $clavesPrimarias = []) {
-        $this->bd = new JocarsaCSV($rutaDatos);
+        $this->bd = new OssoCSV($rutaDatos);
         $this->basededatos = $basededatos;
         $this->clavesPrimarias = $clavesPrimarias;
     }

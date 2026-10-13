@@ -1,5 +1,5 @@
 <?php
-class JocarsaVista {
+class OssoVista {
     private array $config;
 
     public function __construct(array $config = []) {
@@ -11,7 +11,7 @@ class JocarsaVista {
     public function principio(?string $titulo=null): void {
         $titulo = $titulo ?? ($this->config['nombre'] ?? 'ScarletRed'); ?>
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title><?= $this->h($titulo) ?></title><link rel="stylesheet" href="css/estilo.css"><style>:root{--rojo:<?= $this->h($this->config['color'] ?? '#b32d2e') ?>;--colorcorporativo:<?= $this->h($this->config['color'] ?? '#b32d2e') ?>}</style></head><body>
+<title><?= $this->h($titulo) ?></title><link rel="stylesheet" href="css/estilo.css"><style>:root{--rojo:<?= $this->h($this->config['color'] ?? '#9b2335') ?>;--colorcorporativo:<?= $this->h($this->config['color'] ?? '#9b2335') ?>}</style></head><body>
 <?php }
 
     public function final(): void { echo '</body></html>'; }
