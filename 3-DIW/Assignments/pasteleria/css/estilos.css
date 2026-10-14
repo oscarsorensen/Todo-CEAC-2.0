@@ -1,0 +1,30 @@
+/* Base styles for the whole site */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #fafafa;
+  }
+  
+  h1 {
+    color: #c2185b;
+    text-align: center;
+  }
+  
+  nav {
+    text-align: center;
+  }
+  
+  a {
+    color: #c2185b;
+    font-weight: bold;
+  }
+  
+  p {
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  footer {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+  }
