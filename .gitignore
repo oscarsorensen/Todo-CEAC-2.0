@@ -17,3 +17,6 @@ node_modules/
 predicciones/
 .*.history/
 2-DWE-S/100-Entregas-Formacion-Jocarsa/
+2-DWE-S/010-Intelligencia-Articifial/.venv/
+2-DWE-S/010-Intelligencia-Articifial/checkpoints/
+2-DWE-S/010-Intelligencia-Articifial/mi-modelo-embeddings/
