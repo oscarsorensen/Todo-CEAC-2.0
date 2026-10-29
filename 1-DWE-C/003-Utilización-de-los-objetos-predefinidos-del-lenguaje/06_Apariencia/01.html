@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  Completa el código de cada botón:
+    - Open window: abre una ventana vacía ("") de 400 x 300 y guárdala en `popup`.
+    - Grow / Shrink: hazla 100 px más grande / más pequeña con `resizeBy`.
+    - Reset: devuélvela a 400 x 300 con `resizeTo`.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Resize</title>
+</head>
+<body>
+  <button id="open">Open window</button>
+  <button id="grow">Grow</button>
+  <button id="shrink">Shrink</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    let popup = null;
+    
+
+    document.querySelector("#open").addEventListener("click", () => {
+        popup = window.open("", "", "width=400,height=300,popup");
+    });
+
+    document.querySelector("#grow").addEventListener("click", () => {
+      popup.resizeBy(250,250);
+    });
+
+    document.querySelector("#shrink").addEventListener("click", () => {
+        popup.resizeBy(-100,-100);
+    });
+
+    document.querySelector("#reset").addEventListener("click", () => {
+        popup.resizeTo(400,300);
+    });
+  </script>
+</body>
+</html>

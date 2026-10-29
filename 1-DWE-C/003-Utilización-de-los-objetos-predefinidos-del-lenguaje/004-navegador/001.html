@@ -19,7 +19,11 @@
 
   <script>
     const info = {
-      // TODO
+      host: location.host,
+      path: location.pathname,
+      language: navigator.onLine,
+      online: navigator.onLine,
+      screen: "{screen.width}"
     };
 
     console.table(info);
