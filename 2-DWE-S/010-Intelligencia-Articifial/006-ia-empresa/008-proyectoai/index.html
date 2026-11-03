@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Osso AI Company</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+      // Tema guardado, o el del sistema si no hay ninguno
+      let tema = null
+      try { tema = localStorage.getItem("tema") } catch (e) {}
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      document.documentElement.dataset.theme = tema
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="marca">
+        <span>Osso AI</span>
+        <button type="button" id="tema" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+      </div>
+      <button type="button" class="nueva" id="nueva">+ Nueva conversación</button>
+      <div class="lista">
+        <h2>Conversaciones</h2>
+        <ul id="conversaciones"></ul>
+      </div>
+      <div class="pie">
+        <span class="punto"></span> IA local con Ollama
+      </div>
+    </nav>
+    <main>
+      <header class="barra">
+        <h2>Asistente</h2>
+        <span class="etiqueta">Local</span>
+        <button type="button" class="nueva-barra" id="nueva-barra">+ Nueva</button>
+      </header>
+      <section><!-- Aqui van los mensajes --></section>
+      <div class="bienvenida">
+        <h1>¿En qué puedo ayudarte?</h1>
+        <p>Escribe un mensaje o prueba una de estas ideas.</p>
+        <div class="sugerencias">
+          <button type="button">Explícame qué es PHP</button>
+          <button type="button">Dame ideas para un proyecto web</button>
+          <button type="button">Resume qué es una base de datos</button>
+          <button type="button">Cuéntame un dato curioso</button>
+        </div>
+      </div>
+      <form class="caja" id="formulario">
+        <textarea id="entrada" rows="1" placeholder="Escribe tu mensaje..." autofocus></textarea>
+        <button type="submit" id="enviar" title="Enviar" aria-label="Enviar">↑</button>
+      </form>
+      <p class="aviso">La IA puede equivocarse. Comprueba la información importante.</p>
+    </main>
+    <script src="comportamiento.js"></script>
+  </body>
+</html>

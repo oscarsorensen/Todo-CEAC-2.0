@@ -19,7 +19,7 @@ class OssoModelo {
 
     private function rutaTabla(string $tabla): string {
         $tabla=$this->validaNombre($tabla);
-        $ref=new ReflectionClass($this->bd); $prop=$ref->getProperty('rutaBase'); $prop->setAccessible(true);
+        $ref=new ReflectionClass($this->bd); $prop=$ref->getProperty('rutaBase');
         return rtrim($prop->getValue($this->bd),'/').'/'.$this->basededatos.'/'.$tabla.'.csv';
     }
 
@@ -32,7 +32,7 @@ class OssoModelo {
 
     public function dameCampos(string $tabla): array {
         $ruta=$this->rutaTabla($tabla); if(!file_exists($ruta)) return [];
-        $f=fopen($ruta,'r'); $cab=fgetcsv($f) ?: []; fclose($f); $pk=$this->dameClavePrimaria($tabla);
+        $f=fopen($ruta,'r'); $cab=fgetcsv($f, null, ",", "\"", "\\") ?: []; fclose($f); $pk=$this->dameClavePrimaria($tabla);
         return array_map(fn($n)=>['name'=>$n,'type'=>'TEXT','notnull'=>0,'dflt_value'=>null,'pk'=>$n===$pk?1:0],$cab);
     }
 

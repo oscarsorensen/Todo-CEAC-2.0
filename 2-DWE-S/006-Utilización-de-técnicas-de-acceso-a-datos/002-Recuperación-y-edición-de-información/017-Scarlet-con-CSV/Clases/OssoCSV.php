@@ -45,7 +45,7 @@ class OssoCSV {
         $archivo = fopen($ruta, "w");
 
         // Primera fila = nombres de columnas
-        fputcsv($archivo, $columnas);
+        fputcsv($archivo, $columnas, ",", "\"", "\\");
 
         fclose($archivo);
 
@@ -83,11 +83,11 @@ class OssoCSV {
 
         $archivo = fopen($ruta, "r");
 
-        $cabeceras = fgetcsv($archivo);
+        $cabeceras = fgetcsv($archivo, null, ",", "\"", "\\");
 
         $conjunto = [];
 
-        while (($fila = fgetcsv($archivo)) !== false) {
+        while (($fila = fgetcsv($archivo, null, ",", "\"", "\\")) !== false) {
 
             $conjunto[] = array_combine(
                 $cabeceras,
@@ -143,7 +143,7 @@ class OssoCSV {
 
         // Leer las columnas
         $archivo = fopen($ruta, "r");
-        $cabeceras = fgetcsv($archivo);
+        $cabeceras = fgetcsv($archivo, null, ",", "\"", "\\");
         fclose($archivo);
 
 
@@ -159,7 +159,7 @@ class OssoCSV {
         // Añadir al CSV
         $archivo = fopen($ruta, "a");
 
-        fputcsv($archivo, $fila);
+        fputcsv($archivo, $fila, ",", "\"", "\\");
 
         fclose($archivo);
 
@@ -214,7 +214,7 @@ class OssoCSV {
         // Recuperamos cabeceras
         $archivo = fopen($ruta, "r");
 
-        $cabeceras = fgetcsv($archivo);
+        $cabeceras = fgetcsv($archivo, null, ",", "\"", "\\");
 
         fclose($archivo);
 
@@ -222,7 +222,7 @@ class OssoCSV {
         // Reescribimos TODO el CSV
         $archivo = fopen($ruta, "w");
 
-        fputcsv($archivo, $cabeceras);
+        fputcsv($archivo, $cabeceras, ",", "\"", "\\");
 
         foreach ($datos as $fila) {
 
@@ -232,7 +232,7 @@ class OssoCSV {
                 $filaOrdenada[] = $fila[$columnaCSV];
             }
 
-            fputcsv($archivo, $filaOrdenada);
+            fputcsv($archivo, $filaOrdenada, ",", "\"", "\\");
         }
 
         fclose($archivo);
@@ -283,7 +283,7 @@ class OssoCSV {
         // Cabeceras
         $archivo = fopen($ruta, "r");
 
-        $cabeceras = fgetcsv($archivo);
+        $cabeceras = fgetcsv($archivo, null, ",", "\"", "\\");
 
         fclose($archivo);
 
@@ -291,7 +291,7 @@ class OssoCSV {
         // Reescribir archivo
         $archivo = fopen($ruta, "w");
 
-        fputcsv($archivo, $cabeceras);
+        fputcsv($archivo, $cabeceras, ",", "\"", "\\");
 
         foreach ($nuevosDatos as $fila) {
 
@@ -301,7 +301,7 @@ class OssoCSV {
                 $filaOrdenada[] = $fila[$columnaCSV];
             }
 
-            fputcsv($archivo, $filaOrdenada);
+            fputcsv($archivo, $filaOrdenada, ",", "\"", "\\");
         }
 
         fclose($archivo);
