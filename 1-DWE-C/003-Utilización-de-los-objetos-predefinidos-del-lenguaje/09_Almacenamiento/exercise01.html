@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  Lee de `localStorage` el contador guardado con la clave "visits", súmale 1,
+  guárdalo y muéstralo en `totalLabel` como "Visits: <número>".
+
+  Read the counter stored in `localStorage` under the key “visits”, add 1 to it,
+  save it, and display it in `totalLabel` as “Visits: <number>”.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Visits</title>
+</head>
+<body>
+  <p id="total"></p>
+
+  <script>
+        const totalLabel = document.querySelector("#total");
+
+        const visits = Number(localStorage.getItem("visits")) + 1;
+        localStorage.setItem("visits", visits);
+        totalLabel.textContent = "Visits: " + visits;
+
+    // TODO
+  </script>
+</body>
+</html>
+
+
+
+<!--
+const area = document.querySelector("#area");
+const clicksLabel = document.querySelector("#clicks");
+let clicks = 0;
+
+area.onclick = () => {
+    clicks = clicks + 1;
+    clicksLabel.textContent = "Clicks: " + clicks;
+};
+
+
+document.cookie
+
+
+Almacenamiento:
+localStorage.setItem("nombre", "Oscar");
+console.log(localStorage.getItem("nombre"));
+
+-->
