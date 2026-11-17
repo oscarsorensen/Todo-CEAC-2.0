@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Student Ranking</title>
+
+
+  <style>
+    /* a bit of simple style */
+    body {
+      font-family: sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+    }
+    .card {
+      background: white;
+      padding: 24px 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+    h1,h3 { margin-top: 0; text-align: center; }
+    ol { padding-left: 24px; }
+    li { padding: 6px 0; }
+    .passed { color: #15803d; font-weight: bold; }
+    .failed { color: #b91c1c; font-weight: bold; }
+    .summary { border-top: 1px solid #ddd; margin-top: 16px; padding-top: 8px; }
+  </style>
+
+</head>
+
+<body>
+  <div class="card" id="card">
+    <h1>Student Ranking</h1>
+    <h3>Check also devtools </h3>
+    <ol id="ranking"></ol>
+    <div class="summary" id="summary"></div>
+  </div>
+
+  <script>
+    const data = [
+      ["Ana", "7", "8", "9"],
+      ["Luis", "4", "abc", "5", "-1"],
+      ["Marta", "10", "9", "11", "8"],
+      ["Pedro", "3", "x", "5", "4"],
+      ["Sofía", "6.5", "7.5"],
+    ];
+
+    // Student class: name and grades.
+    class Student {
+      constructor(name, grades) {
+        this.name = name;
+        this.grades = grades;
+      }
+
+      // Using redice to find average. No valid grades = return 0. To avoid NaN.
+      average() {
+        if (this.grades.length === 0) {
+          return 0;
+        }
+        const sum = this.grades.reduce((total, grade) => total + grade, 0);
+        return sum / this.grades.length;
+      }
+
+      // Passed if the average reaches the minimum grade (5).
+      passed(minGrade = 5) {
+        return this.average() >= minGrade;
+      }
+    }
+
+    // 2. Converts  text grades to numbers, discarding the ones that are not a number or are outside 0-10.
+    function convertGrades(texts) {
+      return texts
+        .map((text) => parseFloat(text))
+        .filter((grade) => !isNaN(grade) && grade >= 0 && grade <= 10);
+    }
+
+    // 3. Each row becomes a Student. The first item is the name and the rest are the grades.
+    const students = data.map((row) => new Student(row[0], convertGrades(row.slice(1))));
+    // 4. Sorting by average, from highest to lowest.
+    students.sort((a, b) => b.average() - a.average());
+
+
+    // 5. One line per student.
+    // Each line goes to the console and also to the page, using createElement and textContent.
+    const ranking = document.querySelector("#ranking");
+    const summary = document.querySelector("#summary");
+
+    // Helper to show a text in the console and in the page
+    function show(parent, text, className) {
+      console.log(text);
+      const element = document.createElement(parent === ranking ? "li" : "p");
+      element.textContent = text;
+      if (className) {
+        element.className = className;
+      }
+      parent.appendChild(element);
+    }
+
+    console.log("--- Ranking ---");
+    students.forEach((student) => {
+      const result = student.passed() ? "Passed" : "Failed";
+      show(ranking, `${student.name}: ${student.grades.join(", ")} → average ${student.average()} (${result})`, student.passed() ? "passed" : "failed");
+    });
+
+    // 6. List of students who passed, using filter, map and join.
+    const passedNames = students
+      .filter((student) => student.passed())
+      .map((student) => student.name)
+      .join(", ");
+    show(summary, passedNames ? `Passed: ${passedNames}.` : "Nobody passed.");
+
+
+    // 7. Class average ( average of the averages) and highest grade, looping through all the grades with two nested loops.
+    let averagesSum = 0;
+    let highestGrade = -1;
+    let highestName = "";
+
+    for (const student of students) {
+      averagesSum += student.average();
+      for (const grade of student.grades) {
+        if (grade > highestGrade) {
+          highestGrade = grade;
+          highestName = student.name;
+        }
+      }
+    }
+
+    show(summary, `Class average: ${averagesSum / students.length}`);
+    show(summary, `Highest grade: ${highestGrade} (${highestName})`);
+  </script>
+</body>
+
+</html>
