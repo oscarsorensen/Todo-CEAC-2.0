@@ -2,10 +2,12 @@
 
 Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer, −0.10 per wrong answer, 0 for a blank. If the exam is actually Wednesday 2/12, use Tuesday for a second full quiz run.
 
-## The three files
+## The files
 
 | File | What it's for | Command |
 |---|---|---|
+| `Tema_2_English.pdf`, `Tema_3_English.pdf`, `Tema_4_English.pdf` | Your main reading: every slide in English plus "Explained:" sections. | – |
+| Original slides (Tema 2, 3, 4) | A quick skim after the English section, to learn the Spanish wording used in the exam. If they disagree with the English PDFs, the slides win. | – |
 | `ejercicios.js` | Learn by writing code. There are 46 tasks; you write the code and the file checks it. | `node ejercicios.js tema2` / `node ejercicios.js 17` |
 | `quiz.js` | Practise the exam format. One question at a time, with exam scoring, and the code is actually run after you answer. | `node quiz.js tema3` / `node quiz.js 15` |
 | `soluciones.js` | Only when you're stuck after really trying. | `node ejercicios.js --soluciones` |
@@ -13,21 +15,24 @@ Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer,
 ## Daily routine (1.5 to 2 hours)
 
 1. Spend 10 minutes redoing yesterday's FAIL exercises and missed quiz questions.
-2. Read the day's slides and write a half-page summary in your own words.
-3. Do that day's exercises until they show OK.
-4. Run the quiz for that tema.
+2. Read the day's pages in the English PDF and write a half-page summary in your own words.
+3. Skim the same slides in Spanish (about 10 minutes) to learn the exam wording.
+4. Do that day's exercises until they show OK.
+5. Run the quiz for that tema.
 
 ## Plan
 
-| Day | Slides | Exercises | Quiz |
-|---|---|---|---|
-| Wed 25 | Tema 2, slides 3–25: variables, scope, hoisting, types, conversion, operators | 1–8 | `node quiz.js tema2 7` |
-| Thu 26 | Tema 2, slides 26–37: switch, loops, break and continue. Also Tema 4, slides 2–7: built-in functions, ways to write functions, parameters | 9–14, 31–33 | `node quiz.js tema2` |
-| Fri 27 | Tema 3, slides 2–11: classes, inheritance, Date, String, Math, JSON | 15–25 | `node quiz.js tema3 10` |
-| Sat 28 | Tema 3, slides 12–31: URL, window, timers, dialogs, document, window.open, events, storage | 26–30 | `node quiz.js tema3` |
-| Sun 29 | Tema 4, slides 8–21: callbacks, arrays, methods, sort, map/filter/reduce, objects | 34–46 | `node quiz.js tema4` |
-| Mon 30 | Full mock exam, then a slide review of everything you missed | Redo any FAIL | `node quiz.js` (all 49) |
-| Tue 1 | 20 minutes on your summaries plus this cheat sheet. Nothing new. | – | `node quiz.js 10` |
+| Day | Topic | English PDF | Original slides | Exercises | Quiz |
+|---|---|---|---|---|---|
+| Wed 25 | Variables, scope, hoisting, types, conversion, operators | Tema 2, pages 1–13 (sections 1–21) | Tema 2, slides 3–25 | 1–8 | `node quiz.js tema2 7` |
+| Thu 26 | Switch, loops, break and continue; built-in functions, ways to write functions, parameters, callbacks | Tema 2, pages 13–18 (sections 22–31); Tema 4, pages 1–5 (sections 1–6) | Tema 2, slides 26–37; Tema 4, slides 3–8 | 9–14, 31–33 | `node quiz.js tema2` |
+| Fri 27 | Classes, inheritance, built-in objects, Date, String, Math | Tema 3, pages 1–7 (sections 1–6) | Tema 3, slides 3–11 | 15–25 | `node quiz.js tema3 10` |
+| Sat 28 | URL, window, timers, dialogs, document, generating HTML, window.open, events, storage | Tema 3, pages 7–18 (sections 7–23) | Tema 3, slides 12–31 | 26–30 | `node quiz.js tema3` |
+| Sun 29 | Arrays, array methods, sort, map/filter/reduce, objects | Tema 4, pages 5–15 (sections 7–19) | Tema 4, slides 9–21 | 34–46 | `node quiz.js tema4` |
+| Mon 30 | Full mock exam, then review everything you missed in the English PDF section it points to | – | – | Redo any FAIL | `node quiz.js` (all 49) |
+| Tue 1 | 20 minutes on your summaries plus this cheat sheet. Nothing new. | – | – | – | `node quiz.js 10` |
+
+Each section heading in the English PDFs includes its slide number. When quiz.js or ejercicios.js tells you to review a slide, find the section with that slide number.
 
 Exam tactic: if you can rule out at least one option, answer. A pure guess among four options is still worth about +0.17 on average, and a blank is worth 0.
 
