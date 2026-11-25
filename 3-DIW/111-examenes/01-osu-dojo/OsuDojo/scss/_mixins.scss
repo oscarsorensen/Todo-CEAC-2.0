@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "tokens" as *;
+
+// Mobile first: styles apply from this breakpoint up.
+@mixin desde($punto) {
+  @media (min-width: map.get($puntos, $punto)) {
+    @content;
+  }
+}
+
+// Same visible focus everywhere (WCAG 2.4.7 / 2.4.11).
+@mixin foco {
+  outline: 3px solid var(--oro);
+  outline-offset: 3px;
+}
+
+// Diagonal cut, the dojo's signature shape ("slash").
+@mixin corte($lado: "abajo", $tam: 2.5rem) {
+  @if $lado == "abajo" {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$tam}), 0 100%);
+  } @else {
+    clip-path: polygon(0 #{$tam}, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@mixin titulo($paso: 3) {
+  font-family: $fuente-titulo;
+  font-weight: 400;
+  font-size: clamp(tam($paso - 1), 2vw + tam($paso - 2), tam($paso));
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@mixin rejilla($min: 16rem, $hueco: espacio(5)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, $min), 1fr));
+  gap: $hueco;
+}

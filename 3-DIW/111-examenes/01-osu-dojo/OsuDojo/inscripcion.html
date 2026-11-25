@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscripción y primera clase gratis · OSU! Dojo</title>
+  <meta name="description" content="Reserva tu primera clase gratis de karate Kyokushin en OSU! Dojo València y haz el test «¿Eres un flan?» para saber qué clase te toca.">
+  <link rel="canonical" href="https://osudojo.example/inscripcion.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OSU! Dojo">
+  <meta property="og:title" content="Inscripción y primera clase gratis · OSU! Dojo">
+  <meta property="og:description" content="Reserva tu primera clase gratis de karate Kyokushin en OSU! Dojo València y haz el test «¿Eres un flan?» para saber qué clase te toca.">
+  <meta property="og:url" content="https://osudojo.example/inscripcion.html">
+  <meta property="og:image" content="https://osudojo.example/img/social.jpg">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="icon" href="img/iconos/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ajustes-inicio.js"></script>
+  <script type="module" src="js/comun.js"></script>
+  <script type="module" src="js/formulario.js"></script>
+  <script type="module" src="js/quiz.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html"><svg class="kanku" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="13"/><path fill="currentColor" d="M50 2 59 25H41zM50 98 59 75H41z"/><rect fill="currentColor" x="4" y="43" width="16" height="14" rx="2"/><rect fill="currentColor" x="80" y="43" width="16" height="14" rx="2"/></svg><span translate="no">OSU!<b>DOJO</b></span><span class="solo-lector">, ir al inicio</span></a>
+      <button class="boton-cabecera boton-menu" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="horario.html">Horario</a></li>
+        <li><a href="camino.html">El camino</a></li>
+        <li><a href="senseis.html">Senseis</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="temporizador.html">Temporizador</a></li>
+        <li><a href="inscripcion.html" aria-current="page">Inscripción</a></li>
+        </ul>
+      </nav>
+      <button class="boton-cabecera" type="button" aria-expanded="false" aria-controls="ajustes"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="texto-movil">Ajustes</span><span class="solo-lector"> de lectura</span></button>
+      <button class="boton-cabecera" type="button" id="boton-idioma" translate="no" lang="en">EN<span class="solo-lector"> English version</span></button>
+    </div>
+    <div id="ajustes" class="ajustes" hidden>
+      <div class="contenedor">
+        <fieldset>
+          <legend>Ajustes de lectura (se guardan en este navegador)</legend>
+          <label class="opcion"><input type="checkbox" name="texto-grande"> Texto más grande</label>
+          <label class="opcion"><input type="checkbox" name="sin-movimiento"> Menos movimiento</label>
+          <label class="opcion"><input type="checkbox" name="alto-contraste"> Alto contraste</label>
+        </fieldset>
+      </div>
+    </div>
+  </header>
+  <nav class="migas contenedor" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li><span aria-current="page">Inscripción</span></li></ol></nav>
+  <main id="contenido" tabindex="-1">
+    <div class="contenedor">
+      <div class="intro-pagina">
+        <h1>Primera clase gratis</h1>
+        <p>Rellena esto en dos minutos. Lo difícil viene después, en el tatami.</p>
+      </div>
+      <div class="rejilla">
+        <section aria-labelledby="titulo-form">
+          <h2 id="titulo-form">Reserva</h2>
+          <p>Los campos marcados con <span aria-hidden="true">*</span><span class="solo-lector">asterisco</span> son obligatorios.</p>
+          <div class="resumen-errores" id="resumen-errores" tabindex="-1" hidden>
+            <h2>Revisa estos campos</h2>
+            <ul></ul>
+          </div>
+          <div class="aviso" id="confirmacion" tabindex="-1" hidden></div>
+          <form id="formulario" action="#" method="post">
+            <div class="campo">
+              <label for="nombre">Nombre y apellidos *</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required minlength="3" aria-describedby="nombre-error">
+              <p class="error" id="nombre-error" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="email">Correo electrónico *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-ayuda email-error">
+              <p class="ayuda" id="email-ayuda">Te mandamos la confirmación aquí. Nada de spam, palabra de sensei.</p>
+              <p class="error" id="email-error" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="telefono">Teléfono (opcional)</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9 +]{9,15}" aria-describedby="telefono-ayuda telefono-error">
+              <p class="ayuda" id="telefono-ayuda">9 cifras, por ejemplo 600 123 456.</p>
+              <p class="error" id="telefono-error" hidden></p>
+            </div>
+            <fieldset class="grupo" id="edad" aria-describedby="edad-error">
+              <legend>¿Para quién es la clase? *</legend>
+              <label class="opcion"><input type="radio" name="edad" value="infantil"> Peque (6–11 años)</label><label class="opcion"><input type="radio" name="edad" value="juvenil"> Adolescente (12–17)</label><label class="opcion"><input type="radio" name="edad" value="adultos"> Adulto (18+)</label>
+              <p class="error" id="edad-error" hidden></p>
+            </fieldset>
+            <div class="campo">
+              <label for="clase">Clase que te interesa *</label>
+              <select id="clase" name="clase" required aria-describedby="clase-error">
+                <option value="">Elige una clase</option>
+                <option>Pequeños dragones</option><option>Infantil intermedio</option><option>Juvenil técnica</option>
+                <option>Juvenil competición</option><option>Kyokushin desde cero</option><option>Adultos intermedio</option>
+                <option>Kumite duro</option><option>Familias</option><option>No lo sé, aconsejadme</option>
+              </select>
+              <p class="error" id="clase-error" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="mensaje">¿Algo que debamos saber? (lesiones, dudas…)</label>
+              <textarea id="mensaje" name="mensaje" rows="4" maxlength="500" aria-describedby="mensaje-ayuda"></textarea>
+              <p class="ayuda" id="mensaje-ayuda" aria-live="polite" data-dinamico>Máximo 500 caracteres.</p>
+            </div>
+            <div class="campo">
+              <label class="opcion"><input id="privacidad" name="privacidad" type="checkbox" required aria-describedby="privacidad-error"> He leído que esto es un proyecto de clase y que mis datos no se envían a ningún sitio *</label>
+              <p class="error" id="privacidad-error" hidden></p>
+            </div>
+            <button class="boton" type="submit">Reservar mi clase</button>
+          </form>
+        </section>
+        <section class="quiz" id="quiz" aria-labelledby="titulo-quiz">
+          <h2 id="titulo-quiz">¿Eres un flan?</h2>
+          <p>Contesta con sinceridad. El sensei lo sabrá igualmente.</p>
+          <form id="form-quiz">
+            <fieldset class="grupo"><legend>1. ¿Cuántos años tienes?</legend>
+              <label class="opcion"><input type="radio" name="q-edad" value="infantil"> Entre 6 y 11</label><label class="opcion"><input type="radio" name="q-edad" value="juvenil"> Entre 12 y 17</label><label class="opcion"><input type="radio" name="q-edad" value="adultos"> 18 o más</label></fieldset>
+            <fieldset class="grupo"><legend>2. ¿Has hecho artes marciales?</legend>
+              <label class="opcion"><input type="radio" name="q-exp" value="0"> Nunca. El sofá es mi dojo.</label><label class="opcion"><input type="radio" name="q-exp" value="1"> Algo, hace tiempo.</label><label class="opcion"><input type="radio" name="q-exp" value="2"> Sí, y quiero más caña.</label></fieldset>
+            <fieldset class="grupo"><legend>3. ¿Qué buscas?</legend>
+              <label class="opcion"><input type="radio" name="q-meta" value="0"> Ponerme en forma</label><label class="opcion"><input type="radio" name="q-meta" value="1"> Aprender a defenderme</label><label class="opcion"><input type="radio" name="q-meta" value="2"> Competir</label></fieldset>
+            <fieldset class="grupo"><legend>4. Escoge tu frase</legend>
+              <label class="opcion"><input type="radio" name="q-frase" value="0"> «Mañana empiezo»</label><label class="opcion"><input type="radio" name="q-frase" value="1"> «Hoy toca»</label><label class="opcion"><input type="radio" name="q-frase" value="2"> «¿Dónde está el saco?»</label></fieldset>
+            <button class="boton--oro" type="submit">Ver mi nivel</button>
+          </form>
+          <div class="aviso resultado" id="resultado-quiz" tabindex="-1" hidden></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>OSU! Dojo</h2>
+          <p>Karate Kyokushin en Valencia desde que alguien dijo «mañana empiezo» y no empezó.</p>
+        </div>
+        <div>
+          <h2>Dónde</h2>
+          <address>Carrer del Kiai, 7<br>46020 València<br><a href="tel:+34960000000">960 000 000</a><br><a href="mailto:hola@osudojo.example">hola@osudojo.example</a></address>
+        </div>
+        <div>
+          <h2>Más</h2>
+          <ul>
+            <li><a href="guia-estilo.html">Guía de estilo</a></li>
+            <li><a href="accesibilidad.html">Accesibilidad</a></li>
+            <li><a href="creditos.html">Créditos y licencias</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">Dojo ficticio: proyecto de Diseño de Interfaces Web (DAW2, CEAC) de Oscar Sorensen. Ilustraciones y sonidos propios, ver <a href="creditos.html">créditos</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "osu-dojo",
+  "private": true,
+  "description": "OSU! Dojo: web de un dojo de karate Kyokushin (proyecto DIW)",
+  "scripts": {
+    "css": "sass --no-source-map --style=compressed scss/estilos.scss css/estilos.css",
+    "css:vigilar": "sass --no-source-map --watch scss/estilos.scss css/estilos.css",
+    "accesibilidad": "pa11y-ci"
+  },
+  "devDependencies": {
+    "pa11y-ci": "^5.0.0",
+    "sass": "^1.108.2"
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSU! Dojo · Karate Kyokushin en València</title>
+  <meta name="description" content="Dojo de karate Kyokushin en València para peques, adolescentes y adultos. Primera clase gratis. Strike first, strike hard, no mercy.">
+  <link rel="canonical" href="https://osudojo.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OSU! Dojo">
+  <meta property="og:title" content="OSU! Dojo · Karate Kyokushin en València">
+  <meta property="og:description" content="Dojo de karate Kyokushin en València para peques, adolescentes y adultos. Primera clase gratis. Strike first, strike hard, no mercy.">
+  <meta property="og:url" content="https://osudojo.example/">
+  <meta property="og:image" content="https://osudojo.example/img/social.jpg">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="icon" href="img/iconos/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ajustes-inicio.js"></script>
+  <script type="module" src="js/comun.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsActivityLocation", "name": "OSU! Dojo", "description": "Dojo de karate Kyokushin en Valencia para niños, adolescentes y adultos.", "url": "https://osudojo.example/", "telephone": "+34960000000", "email": "hola@osudojo.example", "image": "https://osudojo.example/img/social.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Carrer del Kiai, 7", "postalCode": "46020", "addressLocality": "València", "addressCountry": "ES"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "17:00", "closes": "22:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:30", "closes": "13:30"}]}</script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html"><svg class="kanku" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="13"/><path fill="currentColor" d="M50 2 59 25H41zM50 98 59 75H41z"/><rect fill="currentColor" x="4" y="43" width="16" height="14" rx="2"/><rect fill="currentColor" x="80" y="43" width="16" height="14" rx="2"/></svg><span translate="no">OSU!<b>DOJO</b></span><span class="solo-lector">, ir al inicio</span></a>
+      <button class="boton-cabecera boton-menu" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="horario.html">Horario</a></li>
+        <li><a href="camino.html">El camino</a></li>
+        <li><a href="senseis.html">Senseis</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="temporizador.html">Temporizador</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        </ul>
+      </nav>
+      <button class="boton-cabecera" type="button" aria-expanded="false" aria-controls="ajustes"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="texto-movil">Ajustes</span><span class="solo-lector"> de lectura</span></button>
+      <button class="boton-cabecera" type="button" id="boton-idioma" translate="no" lang="en">EN<span class="solo-lector"> English version</span></button>
+    </div>
+    <div id="ajustes" class="ajustes" hidden>
+      <div class="contenedor">
+        <fieldset>
+          <legend>Ajustes de lectura (se guardan en este navegador)</legend>
+          <label class="opcion"><input type="checkbox" name="texto-grande"> Texto más grande</label>
+          <label class="opcion"><input type="checkbox" name="sin-movimiento"> Menos movimiento</label>
+          <label class="opcion"><input type="checkbox" name="alto-contraste"> Alto contraste</label>
+        </fieldset>
+      </div>
+    </div>
+  </header>
+  
+  <main id="contenido" tabindex="-1">
+    <section class="portada animado" aria-labelledby="titulo-portada" data-animado>
+      <div class="portada__arte"><svg class="arte-svg arte-svg--portada" viewBox="0 0 1200 900" aria-hidden="true" focusable="false" preserveAspectRatio="xMaxYMid slice"><rect class="arte-fondo" width="1200" height="900"/><circle class="arte-sol" cx="840" cy="400" r="260"/><path class="arte-rayos" style="transform-origin:840px 400px" d="M840 400L2140 400L2128.9 569.7ZM840 400L2095.7 736.5L2041 897.5ZM840 400L1965.8 1050L1871.4 1191.4ZM840 400L1759.2 1319.2L1631.4 1431.4ZM840 400L1490 1525.8L1337.5 1601ZM840 400L1176.5 1655.7L1009.7 1688.9ZM840 400L840 1700L670.3 1688.9ZM840 400L503.5 1655.7L342.5 1601ZM840 400L190 1525.8L48.6 1431.4ZM840 400L-79.2 1319.2L-191.4 1191.4ZM840 400L-285.8 1050L-361 897.5ZM840 400L-415.7 736.5L-448.9 569.7ZM840 400L-460 400L-448.9 230.3ZM840 400L-415.7 63.5L-361 -97.5ZM840 400L-285.8 -250L-191.4 -391.4ZM840 400L-79.2 -519.2L48.6 -631.4ZM840 400L190 -725.8L342.5 -801ZM840 400L503.5 -855.7L670.3 -888.9ZM840 400L840 -900L1009.7 -888.9ZM840 400L1176.5 -855.7L1337.5 -801ZM840 400L1490 -725.8L1631.4 -631.4ZM840 400L1759.2 -519.2L1871.4 -391.4ZM840 400L1965.8 -250L2041 -97.5ZM840 400L2095.7 63.5L2128.9 230.3Z"/><path class="arte-linea arte-linea--portada" style="animation-delay:0s" d="M330 300L590 300"/><path class="arte-linea arte-linea--portada" style="animation-delay:0.3s" d="M400 380L600 380"/><path class="arte-linea arte-linea--portada" style="animation-delay:0.6s" d="M300 460L600 460"/><path class="arte-linea arte-linea--portada" style="animation-delay:0.9s" d="M420 540L600 540"/><ellipse class="arte-sombra" cx="820" cy="780" rx="190" ry="9"/><g transform="translate(820 560) scale(2.6)"><g class="arte-cuerpo"><path d="M0 0L14 42L20 82" stroke-width="17"/><g class="arte-mawashi-tronco" style="transform-origin:0px 0px"><path d="M0 0L4 -78" stroke-width="28"/><path d="M4 -78L-10 -48L18 -72" stroke-width="15"/><path d="M4 -78L32 -54L46 -82" stroke-width="15"/><circle class="arte-cabeza" cx="10" cy="-102" r="17"/><g class="arte-cinta arte-cinta--negro"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g></g><g class="arte-mawashi-muslo" style="transform-origin:0px 0px"><path d="M0 0L-20 42" stroke-width="17"/><g class="arte-mawashi-tibia" style="transform-origin:-20px 42px"><path d="M-20 42L-36 82" stroke-width="17"/></g></g></g></g><path class="arte-impacto arte-impacto--portada" style="transform-origin:1040px 462px" d="M1040 392L1048 437.3L1081.1 405.4L1061 446.7L1106.6 440.4L1066 462L1106.6 483.6L1061 477.3L1081.1 518.6L1048 486.7L1040 532L1032 486.7L998.9 518.6L1019 477.3L973.4 483.6L1014 462L973.4 440.4L1019 446.7L998.9 405.4L1032 437.3Z"/></svg></div>
+      <button class="boton-cabecera boton-pausa" type="button" data-pausa data-dinamico hidden>Pausar animación</button>
+      <div class="contenedor">
+        <p class="sello">Kyokushin · València</p>
+        <h1 id="titulo-portada">Strike first. Strike hard. No mercy.</h1>
+        <p>Karate de contacto pleno. Para gente que está harta de poner excusas (y para sus hijos).</p>
+        <div class="acciones">
+          <a class="boton" href="inscripcion.html">Primera clase gratis</a>
+          <a class="boton--borde" href="horario.html">Ver horario</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="titulo-por-que">
+      <div class="contenedor">
+        <h2 id="titulo-por-que">Aquí no venimos a posar</h2>
+        <p>Kyokushin es el karate más duro que existe: golpes reales, respeto real, progreso real. Tú pones las ganas; nosotros, el resto.</p>
+        <div class="rejilla">
+          <article class="tarjeta"><svg class="tarjeta__icono" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10 20a4 4 0 0 1 4-4h20a6 6 0 0 1 6 6v8c0 7-5 12-12 12h-6c-7 0-12-5-12-12zM14 8h6v8h-6zm8-2h6v10h-6zm8 2h6v8h-6z"/></svg><h3>Cuerpo</h3><p>Fuerza, resistencia y flexibilidad sin máquinas ni espejos. Sales sudando, siempre.</p></article>
+          <article class="tarjeta"><svg class="tarjeta__icono" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="18" r="10" fill="none" stroke="currentColor" stroke-width="4"/><path d="M8 44c2-9 8-14 16-14s14 5 16 14" fill="none" stroke="currentColor" stroke-width="4"/><path d="M14 14h20" stroke="currentColor" stroke-width="4"/></svg><h3>Cabeza</h3><p>Disciplina y calma bajo presión. El estrés del trabajo se queda en el saco.</p></article>
+          <article class="tarjeta"><svg class="tarjeta__icono" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 42 6 25a10 10 0 0 1 18-12 10 10 0 0 1 18 12z"/></svg><h3>Equipo</h3><p>Aquí nos pegamos con técnica y nos ayudamos con todo. Nadie entrena solo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="titulo-quiz-teaser">
+      <div class="contenedor">
+        <h2 id="titulo-quiz-teaser">¿Eres un flan?</h2>
+        <p>Cuatro preguntas, cero piedad. Te decimos tu nivel real y qué clase te toca.</p>
+        <a class="boton--oro" href="inscripcion.html#quiz">Hacer el test</a>
+      </div>
+    </section>
+
+    <section class="seccion seccion--roja" aria-labelledby="titulo-opiniones">
+      <div class="contenedor">
+        <h2 id="titulo-opiniones">Lo que dicen (cuando recuperan el aliento)</h2>
+        <div class="rejilla">
+          <blockquote class="cita"><p>«Vine por mi hijo. Ahora el que no se pierde una clase soy yo.»</p><footer>Paco, 44 años, cinturón naranja</footer></blockquote>
+          <blockquote class="cita"><p>«Mi jefe me grita menos desde que sabe que hago Kyokushin.»</p><footer>Marta, 31 años, cinturón azul</footer></blockquote>
+          <blockquote class="cita"><p>«Las agujetas del primer día duran tres. El orgullo, mucho más.»</p><footer>Sergio, 17 años, cinturón amarillo</footer></blockquote>
+        </div>
+        <p><a href="inscripcion.html">Reserva tu primera clase gratis</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>OSU! Dojo</h2>
+          <p>Karate Kyokushin en Valencia desde que alguien dijo «mañana empiezo» y no empezó.</p>
+        </div>
+        <div>
+          <h2>Dónde</h2>
+          <address>Carrer del Kiai, 7<br>46020 València<br><a href="tel:+34960000000">960 000 000</a><br><a href="mailto:hola@osudojo.example">hola@osudojo.example</a></address>
+        </div>
+        <div>
+          <h2>Más</h2>
+          <ul>
+            <li><a href="guia-estilo.html">Guía de estilo</a></li>
+            <li><a href="accesibilidad.html">Accesibilidad</a></li>
+            <li><a href="creditos.html">Créditos y licencias</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">Dojo ficticio: proyecto de Diseño de Interfaces Web (DAW2, CEAC) de Oscar Sorensen. Ilustraciones y sonidos propios, ver <a href="creditos.html">créditos</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

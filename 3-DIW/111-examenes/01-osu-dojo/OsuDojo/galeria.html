@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería · OSU! Dojo</title>
+  <meta name="description" content="Ilustraciones animadas de karate Kyokushin: kumite, patadas, rompimientos, peques y trofeos. Pulsa para ampliar.">
+  <link rel="canonical" href="https://osudojo.example/galeria.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OSU! Dojo">
+  <meta property="og:title" content="Galería · OSU! Dojo">
+  <meta property="og:description" content="Ilustraciones animadas de karate Kyokushin: kumite, patadas, rompimientos, peques y trofeos. Pulsa para ampliar.">
+  <meta property="og:url" content="https://osudojo.example/galeria.html">
+  <meta property="og:image" content="https://osudojo.example/img/social.jpg">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="icon" href="img/iconos/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ajustes-inicio.js"></script>
+  <script type="module" src="js/comun.js"></script>
+  <script type="module" src="js/galeria.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html"><svg class="kanku" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="13"/><path fill="currentColor" d="M50 2 59 25H41zM50 98 59 75H41z"/><rect fill="currentColor" x="4" y="43" width="16" height="14" rx="2"/><rect fill="currentColor" x="80" y="43" width="16" height="14" rx="2"/></svg><span translate="no">OSU!<b>DOJO</b></span><span class="solo-lector">, ir al inicio</span></a>
+      <button class="boton-cabecera boton-menu" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="horario.html">Horario</a></li>
+        <li><a href="camino.html">El camino</a></li>
+        <li><a href="senseis.html">Senseis</a></li>
+        <li><a href="galeria.html" aria-current="page">Galería</a></li>
+        <li><a href="temporizador.html">Temporizador</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        </ul>
+      </nav>
+      <button class="boton-cabecera" type="button" aria-expanded="false" aria-controls="ajustes"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="texto-movil">Ajustes</span><span class="solo-lector"> de lectura</span></button>
+      <button class="boton-cabecera" type="button" id="boton-idioma" translate="no" lang="en">EN<span class="solo-lector"> English version</span></button>
+    </div>
+    <div id="ajustes" class="ajustes" hidden>
+      <div class="contenedor">
+        <fieldset>
+          <legend>Ajustes de lectura (se guardan en este navegador)</legend>
+          <label class="opcion"><input type="checkbox" name="texto-grande"> Texto más grande</label>
+          <label class="opcion"><input type="checkbox" name="sin-movimiento"> Menos movimiento</label>
+          <label class="opcion"><input type="checkbox" name="alto-contraste"> Alto contraste</label>
+        </fieldset>
+      </div>
+    </div>
+  </header>
+  <nav class="migas contenedor" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li><span aria-current="page">Galería</span></li></ol></nav>
+  <main id="contenido" tabindex="-1">
+    <div class="contenedor">
+      <div class="intro-pagina">
+        <h1>Galería</h1>
+        <p>Ocho ilustraciones animadas, cero fotos de postureo. Pulsa una para verla en grande; con el teclado, <kbd>←</kbd> y <kbd>→</kbd> pasan de una a otra y <kbd>Esc</kbd> cierra.</p>
+      </div>
+      <div class="galeria-zona animado" data-animado>
+        <button class="boton-cabecera boton-pausa" type="button" data-pausa data-dinamico hidden>Pausar animación</button>
+        <ul class="galeria" id="galeria">
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Dos karatekas en combate: uno lanza una patada circular al costado del otro." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="200" cy="140" r="96"/><path class="arte-rayos" style="transform-origin:200px 140px" d="M200 140L460 140L451.1 207.3ZM200 140L425.2 270L383.8 323.8ZM200 140L330 365.2L267.3 391.1ZM200 140L200 400L132.7 391.1ZM200 140L70 365.2L16.2 323.8ZM200 140L-25.2 270L-51.1 207.3ZM200 140L-60 140L-51.1 72.7ZM200 140L-25.2 10L16.2 -43.8ZM200 140L70 -85.2L132.7 -111.1ZM200 140L200 -120L267.3 -111.1ZM200 140L330 -85.2L383.8 -43.8ZM200 140L425.2 10L451.1 72.7Z"/><ellipse class="arte-sombra" cx="186" cy="280" rx="60" ry="9"/><ellipse class="arte-sombra" cx="292" cy="280" rx="50" ry="9"/><g transform="translate(292 196) scale(-1 1)"><g class="arte-rival arte-retroceso" style="transform-origin:0px 0px"><g class="arte-cuerpo"><path d="M0 0L26 40L40 82" stroke-width="17"/><path d="M0 0L-20 42L-36 82" stroke-width="17"/><path d="M0 0L4 -78" stroke-width="28"/><path d="M4 -78L-10 -48L18 -72" stroke-width="15"/><path d="M4 -78L32 -54L46 -82" stroke-width="15"/><circle class="arte-cabeza" cx="10" cy="-102" r="17"/><g class="arte-cinta arte-cinta--azul"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g></g></g></g><g transform="translate(186 196)"><g class="arte-cuerpo"><path d="M0 0L14 42L20 82" stroke-width="17"/><g class="arte-mawashi-tronco" style="transform-origin:0px 0px"><path d="M0 0L4 -78" stroke-width="28"/><path d="M4 -78L-10 -48L18 -72" stroke-width="15"/><path d="M4 -78L32 -54L46 -82" stroke-width="15"/><circle class="arte-cabeza" cx="10" cy="-102" r="17"/><g class="arte-cinta arte-cinta--negro"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g></g><g class="arte-mawashi-muslo" style="transform-origin:0px 0px"><path d="M0 0L-20 42" stroke-width="17"/><g class="arte-mawashi-tibia" style="transform-origin:-20px 42px"><path d="M-20 42L-36 82" stroke-width="17"/></g></g></g></g><path class="arte-impacto arte-impacto--kumite" style="transform-origin:268px 158px" d="M268 134L271.8 148.8L285 141L277.2 154.2L292 158L277.2 161.8L285 175L271.8 167.2L268 182L264.2 167.2L251 175L258.8 161.8L244 158L258.8 154.2L251 141L264.2 148.8Z"/></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Un karateka lanza una patada frontal (mae geri)." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="250" cy="130" r="90"/><path class="arte-rayos" style="transform-origin:250px 130px" d="M250 130L510 130L501.1 197.3ZM250 130L475.2 260L433.8 313.8ZM250 130L380 355.2L317.3 381.1ZM250 130L250 390L182.7 381.1ZM250 130L120 355.2L66.2 313.8ZM250 130L24.8 260L-1.1 197.3ZM250 130L-10 130L-1.1 62.7ZM250 130L24.8 0L66.2 -53.8ZM250 130L120 -95.2L182.7 -121.1ZM250 130L250 -130L317.3 -121.1ZM250 130L380 -95.2L433.8 -53.8ZM250 130L475.2 -0L501.1 62.7Z"/><path class="arte-linea" style="animation-delay:0s" d="M250 150L340 150"/><path class="arte-linea" style="animation-delay:0.3s" d="M270 170L340 170"/><path class="arte-linea" style="animation-delay:0.6s" d="M240 190L350 190"/><path class="arte-linea" style="animation-delay:0.9s" d="M280 130L340 130"/><ellipse class="arte-sombra" cx="170" cy="282" rx="70" ry="9"/><g transform="translate(170 198)"><g class="arte-cuerpo"><path d="M0 0L14 42L20 82" stroke-width="17"/><g class="arte-mae-tronco" style="transform-origin:0px 0px"><path d="M0 0L4 -78" stroke-width="28"/><path d="M4 -78L-10 -48L18 -72" stroke-width="15"/><path d="M4 -78L32 -54L46 -82" stroke-width="15"/><circle class="arte-cabeza" cx="10" cy="-102" r="17"/><g class="arte-cinta arte-cinta--negro"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g></g><g class="arte-mae-muslo" style="transform-origin:0px 0px"><path d="M0 0L-20 42" stroke-width="17"/><g class="arte-mae-tibia" style="transform-origin:-20px 42px"><path d="M-20 42L-36 82" stroke-width="17"/></g></g></g></g></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Un karateka lanza un puñetazo recto y el golpe estalla en dorado." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="210" cy="150" r="100"/><path class="arte-rayos" style="transform-origin:210px 150px" d="M210 150L470 150L465 200.7ZM210 150L450.2 249.5L426.2 294.4ZM210 150L393.8 333.8L354.4 366.2ZM210 150L309.5 390.2L260.7 405ZM210 150L210 410L159.3 405ZM210 150L110.5 390.2L65.6 366.2ZM210 150L26.2 333.8L-6.2 294.4ZM210 150L-30.2 249.5L-45 200.7ZM210 150L-50 150L-45 99.3ZM210 150L-30.2 50.5L-6.2 5.6ZM210 150L26.2 -33.8L65.6 -66.2ZM210 150L110.5 -90.2L159.3 -105ZM210 150L210 -110L260.7 -105ZM210 150L309.5 -90.2L354.4 -66.2ZM210 150L393.8 -33.8L426.2 5.6ZM210 150L450.2 50.5L465 99.3Z"/><path class="arte-linea arte-linea--tsuki" style="animation-delay:0s" d="M230 100L290 100"/><path class="arte-linea arte-linea--tsuki" style="animation-delay:0.25s" d="M225 140L295 140"/><path class="arte-linea arte-linea--tsuki" style="animation-delay:0.5s" d="M240 120L280 120"/><ellipse class="arte-sombra" cx="180" cy="282" rx="70" ry="9"/><g transform="translate(180 198)"><g class="arte-cuerpo"><path d="M0 0L34 34L46 82" stroke-width="17"/><path d="M0 0L-30 40L-58 82" stroke-width="17"/><path d="M0 0L4 -78" stroke-width="28"/><path d="M4 -78L28 -58L40 -80" stroke-width="15"/><circle class="arte-cabeza" cx="10" cy="-102" r="17"/><g class="arte-cinta arte-cinta--marron"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g><g class="arte-tsuki-brazo" style="transform-origin:4px -78px"><path d="M4 -78L-18 -48" stroke-width="15"/><g class="arte-tsuki-antebrazo" style="transform-origin:-18px -48px"><path d="M-18 -48L4 -30" stroke-width="15"/></g></g></g></g><path class="arte-impacto arte-impacto--tsuki" style="transform-origin:262px 120px" d="M262 90L265.7 108.6L279.6 95.7L271.7 112.9L290.5 110.7L274 120L290.5 129.3L271.7 127.1L279.6 144.3L265.7 131.4L262 150L258.3 131.4L244.4 144.3L252.3 127.1L233.5 129.3L250 120L233.5 110.7L252.3 112.9L244.4 95.7L258.3 108.6Z"/></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Un karateka rompe tres tablas con el canto de la mano." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="200" cy="140" r="96"/><path class="arte-rayos" style="transform-origin:200px 140px" d="M200 140L460 140L451.1 207.3ZM200 140L425.2 270L383.8 323.8ZM200 140L330 365.2L267.3 391.1ZM200 140L200 400L132.7 391.1ZM200 140L70 365.2L16.2 323.8ZM200 140L-25.2 270L-51.1 207.3ZM200 140L-60 140L-51.1 72.7ZM200 140L-25.2 10L16.2 -43.8ZM200 140L70 -85.2L132.7 -111.1ZM200 140L200 -120L267.3 -111.1ZM200 140L330 -85.2L383.8 -43.8ZM200 140L425.2 10L451.1 72.7Z"/><ellipse class="arte-sombra" cx="185" cy="282" rx="110" ry="9"/><g transform="translate(130 198)"><rect class="arte-bloque" x="52" y="8" width="16" height="74"/><rect class="arte-bloque" x="92" y="8" width="16" height="74"/><g class="arte-tabla-izq" style="transform-origin:50px 8px"><rect class="arte-tabla" x="50" y="-20" width="30" height="8" rx="1"/><rect class="arte-tabla" x="50" y="-10" width="30" height="8" rx="1"/><rect class="arte-tabla" x="50" y="0" width="30" height="8" rx="1"/></g><g class="arte-tabla-der" style="transform-origin:110px 8px"><rect class="arte-tabla" x="80" y="-20" width="30" height="8" rx="1"/><rect class="arte-tabla" x="80" y="-10" width="30" height="8" rx="1"/><rect class="arte-tabla" x="80" y="0" width="30" height="8" rx="1"/></g><g class="arte-cuerpo"><path d="M0 0L30 34L36 82" stroke-width="17"/><path d="M0 0L-30 40L-56 82" stroke-width="17"/><path d="M0 0L24 -72" stroke-width="28"/><path d="M24 -72L44 -50L34 -32" stroke-width="15"/><circle class="arte-cabeza" cx="36" cy="-94" r="17"/><g class="arte-cinta arte-cinta--negro"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g><g class="arte-shuto" style="transform-origin:24px -72px"><path d="M24 -72L-2 -143" stroke-width="15"/></g></g><path class="arte-impacto arte-impacto--tablas" style="transform-origin:80px -20px" d="M80 -46L83.4 -28.3L98.4 -38.4L88.3 -23.4L106 -20L88.3 -16.6L98.4 -1.6L83.4 -11.7L80 6L76.6 -11.7L61.6 -1.6L71.7 -16.6L54 -20L71.7 -23.4L61.6 -38.4L76.6 -28.3Z"/></g></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Dos peques con cinturón naranja y amarillo saltan con el puño en alto." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="200" cy="150" r="90"/><path class="arte-rayos" style="transform-origin:200px 150px" d="M200 150L460 150L447.3 230.3ZM200 150L410.3 302.8L352.8 360.3ZM200 150L280.3 397.3L200 410ZM200 150L119.7 397.3L47.2 360.3ZM200 150L-10.3 302.8L-47.3 230.3ZM200 150L-60 150L-47.3 69.7ZM200 150L-10.3 -2.8L47.2 -60.3ZM200 150L119.7 -97.3L200 -110ZM200 150L280.3 -97.3L352.8 -60.3ZM200 150L410.3 -2.8L447.3 69.7Z"/><path class="arte-chispa" style="transform-origin:70px 70px;animation-delay:0s" d="M70 60L72.1 67.9L80 70L72.1 72.1L70 80L67.9 72.1L60 70L67.9 67.9Z"/><path class="arte-chispa" style="transform-origin:330px 90px;animation-delay:0.5s" d="M330 80L332.1 87.9L340 90L332.1 92.1L330 100L327.9 92.1L320 90L327.9 87.9Z"/><path class="arte-chispa" style="transform-origin:200px 40px;animation-delay:1s" d="M200 30L202.1 37.9L210 40L202.1 42.1L200 50L197.9 42.1L190 40L197.9 37.9Z"/><path class="arte-chispa" style="transform-origin:110px 160px;animation-delay:1.5s" d="M110 150L112.1 157.9L120 160L112.1 162.1L110 170L107.9 162.1L100 160L107.9 157.9Z"/><path class="arte-chispa" style="transform-origin:300px 180px;animation-delay:0.8s" d="M300 170L302.1 177.9L310 180L302.1 182.1L300 190L297.9 182.1L290 180L297.9 177.9Z"/><ellipse class="arte-sombra" cx="150" cy="280" rx="40" ry="9"/><ellipse class="arte-sombra" cx="260" cy="280" rx="40" ry="9"/><g transform="translate(150 228)"><g class="arte-salto" style="transform-origin:0px 52px"><g class="arte-cuerpo"><path d="M0 0L18 26L4 52" stroke-width="15"/><path d="M0 0L-16 28L-24 56" stroke-width="15"/><path d="M0 0L0 -64" stroke-width="26"/><path d="M0 -64L10 -94L16 -124" stroke-width="14"/><path d="M0 -64L-20 -46L-12 -30" stroke-width="14"/><circle class="arte-cabeza" cx="2" cy="-90" r="21"/><g class="arte-cinta arte-cinta--naranja"><path d="M-14 -4L15 -4" stroke-width="7"/><path d="M10 -4L17 12" stroke-width="5"/></g></g></g></g><g transform="translate(260 228) scale(-1 1)"><g class="arte-salto arte-salto--tarde" style="transform-origin:0px 52px"><g class="arte-cuerpo"><path d="M0 0L18 26L4 52" stroke-width="15"/><path d="M0 0L-16 28L-24 56" stroke-width="15"/><path d="M0 0L0 -64" stroke-width="26"/><path d="M0 -64L10 -94L16 -124" stroke-width="14"/><path d="M0 -64L-20 -46L-12 -30" stroke-width="14"/><circle class="arte-cabeza" cx="2" cy="-90" r="21"/><g class="arte-cinta arte-cinta--amarillo"><path d="M-14 -4L15 -4" stroke-width="7"/><path d="M10 -4L17 12" stroke-width="5"/></g></g></g></g></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Un karateka en posición de jinete lanza un kiai que hace vibrar el aire." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="200" cy="140" r="100"/><path class="arte-rayos" style="transform-origin:200px 140px" d="M200 140L460 140L456.8 180.7ZM200 140L447.3 220.3L431.7 258ZM200 140L410.3 292.8L383.8 323.8ZM200 140L352.8 350.3L318 371.7ZM200 140L280.3 387.3L240.7 396.8ZM200 140L200 400L159.3 396.8ZM200 140L119.7 387.3L82 371.7ZM200 140L47.2 350.3L16.2 323.8ZM200 140L-10.3 292.8L-31.7 258ZM200 140L-47.3 220.3L-56.8 180.7ZM200 140L-60 140L-56.8 99.3ZM200 140L-47.3 59.7L-31.7 22ZM200 140L-10.3 -12.8L16.2 -43.8ZM200 140L47.2 -70.3L82 -91.7ZM200 140L119.7 -107.3L159.3 -116.8ZM200 140L200 -120L240.7 -116.8ZM200 140L280.3 -107.3L318 -91.7ZM200 140L352.8 -70.3L383.8 -43.8ZM200 140L410.3 -12.8L431.7 22ZM200 140L447.3 59.7L456.8 99.3Z"/><circle class="arte-anillo" style="animation-delay:0s" cx="200" cy="100" r="40"/><circle class="arte-anillo" style="animation-delay:0.7s" cx="200" cy="100" r="40"/><circle class="arte-anillo" style="animation-delay:1.4s" cx="200" cy="100" r="40"/><ellipse class="arte-sombra" cx="200" cy="282" rx="80" ry="9"/><g transform="translate(200 198)"><g class="arte-cuerpo arte-respirar" style="transform-origin:0px 82px"><path d="M0 0L-38 30L-50 82" stroke-width="17"/><path d="M0 0L38 30L50 82" stroke-width="17"/><path d="M0 0L0 -80" stroke-width="28"/><path d="M0 -80L-32 -58L8 -98" stroke-width="15"/><path d="M0 -80L32 -58L-8 -98" stroke-width="15"/><circle class="arte-cabeza" cx="0" cy="-104" r="18"/><g class="arte-cinta arte-cinta--verde"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g></g></g></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Un trofeo dorado bajo una lluvia de confeti." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="200" cy="140" r="104"/><path class="arte-rayos" style="transform-origin:200px 140px" d="M200 140L460 140L455 190.7ZM200 140L440.2 239.5L416.2 284.4ZM200 140L383.8 323.8L344.4 356.2ZM200 140L299.5 380.2L250.7 395ZM200 140L200 400L149.3 395ZM200 140L100.5 380.2L55.6 356.2ZM200 140L16.2 323.8L-16.2 284.4ZM200 140L-40.2 239.5L-55 190.7ZM200 140L-60 140L-55 89.3ZM200 140L-40.2 40.5L-16.2 -4.4ZM200 140L16.2 -43.8L55.6 -76.2ZM200 140L100.5 -100.2L149.3 -115ZM200 140L200 -120L250.7 -115ZM200 140L299.5 -100.2L344.4 -76.2ZM200 140L383.8 -43.8L416.2 -4.4ZM200 140L440.2 40.5L455 89.3Z"/><ellipse class="arte-sombra" cx="200" cy="246" rx="70" ry="9"/><path class="arte-oro" d="M150 70H250V100C250 150 225 170 200 172C175 170 150 150 150 100Z"/><path class="arte-asa" d="M150 84C118 84 118 132 158 136M250 84C282 84 282 132 242 136"/><rect class="arte-oro" x="191" y="170" width="18" height="34"/><rect class="arte-oro" x="166" y="204" width="68" height="16" rx="2"/><rect class="arte-oro-oscuro" x="154" y="220" width="92" height="18" rx="2"/><circle class="arte-grabado" cx="200" cy="110" r="16"/><path class="arte-chispa" style="transform-origin:140px 66px;animation-delay:0s" d="M140 54L142.1 63.9L152 66L142.1 68.1L140 78L137.9 68.1L128 66L137.9 63.9Z"/><path class="arte-chispa" style="transform-origin:262px 92px;animation-delay:0.7s" d="M262 80L264.1 89.9L274 92L264.1 94.1L262 104L259.9 94.1L250 92L259.9 89.9Z"/><path class="arte-chispa" style="transform-origin:232px 160px;animation-delay:1.3s" d="M232 148L234.1 157.9L244 160L234.1 162.1L232 172L229.9 162.1L220 160L229.9 157.9Z"/><rect class="arte-confeti arte-confeti--rojo" style="animation-delay:0s" x="40" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--hueso" style="animation-delay:1.2s" x="90" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--oro" style="animation-delay:0.5s" x="130" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--rojo" style="animation-delay:0.9s" x="270" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--hueso" style="animation-delay:0.2s" x="310" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--oro" style="animation-delay:1.5s" x="350" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--oro" style="animation-delay:2s" x="70" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--rojo" style="animation-delay:2.4s" x="330" y="-12" width="8" height="12"/><rect class="arte-confeti arte-confeti--hueso" style="animation-delay:1.8s" x="220" y="-12" width="8" height="12"/></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        <li><button type="button" aria-haspopup="dialog">
+          <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="El dojo, con tejado japonés, delante de un sol rojo que gira." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="200" cy="150" r="110"/><path class="arte-rayos" style="transform-origin:200px 150px" d="M200 150L480 150L475.7 198.6ZM200 150L463.1 245.8L442.5 290ZM200 150L414.5 330L380 364.5ZM200 150L340 392.5L295.8 413.1ZM200 150L248.6 425.7L200 430ZM200 150L151.4 425.7L104.2 413.1ZM200 150L60 392.5L20 364.5ZM200 150L-14.5 330L-42.5 290ZM200 150L-63.1 245.8L-75.7 198.6ZM200 150L-80 150L-75.7 101.4ZM200 150L-63.1 54.2L-42.5 10ZM200 150L-14.5 -30L20 -64.5ZM200 150L60 -92.5L104.2 -113.1ZM200 150L151.4 -125.7L200 -130ZM200 150L248.6 -125.7L295.8 -113.1ZM200 150L340 -92.5L380 -64.5ZM200 150L414.5 -30L442.5 10ZM200 150L463.1 54.2L475.7 101.4Z"/><path class="arte-mastil" d="M50 244L50 120"/><path class="arte-bandera" style="transform-origin:50px 124px;animation-delay:0s" d="M50 124h40v26h-40Z"/><path class="arte-mastil" d="M310 244L310 120"/><path class="arte-bandera" style="transform-origin:310px 124px;animation-delay:0.4s" d="M310 124h40v26h-40Z"/><rect class="arte-muro" x="110" y="168" width="180" height="62"/><rect class="arte-puerta" x="182" y="186" width="36" height="44"/><path class="arte-tejado" d="M66 176Q118 166 134 142H266Q282 166 334 176Z"/><rect class="arte-muro" x="150" y="110" width="100" height="34"/><path class="arte-tejado" d="M116 116Q152 106 164 84H236Q248 106 284 116Z"/><circle class="arte-grabado" cx="200" cy="127" r="9"/><rect class="arte-tejado" x="86" y="230" width="228" height="14"/></svg>
+          <span class="solo-lector">Ampliar ilustración</span></button></li>
+        </ul>
+      </div>
+    </div>
+    <dialog class="visor" id="visor" aria-labelledby="visor-pie">
+      <div class="visor__barra">
+        <button class="boton-cabecera" type="button" data-mover="-1">← Anterior</button>
+        <button class="boton-cabecera" type="button" data-mover="1">Siguiente →</button>
+        <button class="boton-cabecera" type="button" data-cerrar>Cerrar</button>
+      </div>
+      <figure>
+        <div class="visor__arte"></div>
+        <figcaption id="visor-pie"></figcaption>
+      </figure>
+    </dialog>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>OSU! Dojo</h2>
+          <p>Karate Kyokushin en Valencia desde que alguien dijo «mañana empiezo» y no empezó.</p>
+        </div>
+        <div>
+          <h2>Dónde</h2>
+          <address>Carrer del Kiai, 7<br>46020 València<br><a href="tel:+34960000000">960 000 000</a><br><a href="mailto:hola@osudojo.example">hola@osudojo.example</a></address>
+        </div>
+        <div>
+          <h2>Más</h2>
+          <ul>
+            <li><a href="guia-estilo.html">Guía de estilo</a></li>
+            <li><a href="accesibilidad.html">Accesibilidad</a></li>
+            <li><a href="creditos.html">Créditos y licencias</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">Dojo ficticio: proyecto de Diseño de Interfaces Web (DAW2, CEAC) de Oscar Sorensen. Ilustraciones y sonidos propios, ver <a href="creditos.html">créditos</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

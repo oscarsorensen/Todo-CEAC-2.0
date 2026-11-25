@@ -1,0 +1,24 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": ["htmlcs", "axe"],
+    "timeout": 30000,
+    "levelCapWhenNeedsReview": "warning",
+    "chromeLaunchConfig": {
+      "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    }
+  },
+  "urls": [
+    "http://127.0.0.1:8770/index.html",
+    "http://127.0.0.1:8770/horario.html",
+    "http://127.0.0.1:8770/camino.html",
+    "http://127.0.0.1:8770/senseis.html",
+    "http://127.0.0.1:8770/galeria.html",
+    "http://127.0.0.1:8770/temporizador.html",
+    "http://127.0.0.1:8770/inscripcion.html",
+    "http://127.0.0.1:8770/guia-estilo.html",
+    "http://127.0.0.1:8770/accesibilidad.html",
+    "http://127.0.0.1:8770/creditos.html",
+    "http://127.0.0.1:8770/404.html"
+  ]
+}

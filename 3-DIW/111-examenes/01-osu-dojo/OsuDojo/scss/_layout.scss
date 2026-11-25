@@ -1,0 +1,282 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.contenedor {
+  width: min(100% - 2 * espacio(4), $ancho-max);
+  margin-inline: auto;
+}
+
+// Header: logo, menu button (mobile), navigation, settings
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--fondo) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: $borde solid var(--acento);
+}
+
+.cabecera__fila {
+  display: flex;
+  align-items: center;
+  gap: espacio(2);
+  min-height: 4rem;
+
+  @include desde("tablet") {
+    gap: espacio(3);
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: espacio(2);
+  margin-right: auto;
+  color: var(--texto);
+  text-decoration: none;
+  font-family: $fuente-titulo;
+  font-size: tam(1);
+  letter-spacing: 0.04em;
+
+  @include desde("tablet") {
+    font-size: tam(2);
+  }
+
+  .kanku {
+    flex-shrink: 0;
+    width: 2rem;
+    color: var(--acento);
+
+    @include desde("tablet") {
+      width: 2.4rem;
+    }
+  }
+
+  b {
+    font-weight: 400;
+    color: var(--enlace);
+  }
+}
+
+.boton-cabecera {
+  display: inline-flex;
+  align-items: center;
+  gap: espacio(2);
+  min-height: 2.75rem;
+  padding: 0 espacio(2);
+  border: 2px solid var(--linea);
+  border-radius: $radio;
+  background: transparent;
+  color: var(--texto);
+  font: 600 tam(0) $fuente-texto;
+  cursor: pointer;
+
+  &:hover,
+  &[aria-expanded="true"] {
+    border-color: var(--oro);
+    color: var(--oro);
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 1.25rem;
+  }
+
+  @include desde("tablet") {
+    padding: 0 espacio(3);
+  }
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  inset: 100% 0 auto;
+  background: var(--superficie);
+  border-bottom: $borde solid var(--acento);
+
+  &.abierto {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: espacio(3) espacio(4);
+    max-width: none;
+  }
+
+  a {
+    display: block;
+    padding: espacio(3) 0;
+    color: var(--texto);
+    text-decoration: none;
+    font-family: $fuente-titulo;
+    font-size: tam(1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &:hover,
+    &[aria-current="page"] {
+      color: var(--enlace);
+    }
+
+    &[aria-current="page"] {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
+  }
+
+  @include desde("escritorio") {
+    display: block;
+    position: static;
+    background: none;
+    border: 0;
+
+    ul {
+      display: flex;
+      gap: espacio(5);
+      padding: 0;
+    }
+
+    a {
+      font-size: tam(0);
+    }
+  }
+}
+
+.boton-menu {
+  @include desde("escritorio") {
+    display: none;
+  }
+}
+
+.ajustes {
+  background: var(--superficie);
+  border-top: 1px solid var(--linea);
+
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: espacio(3) espacio(6);
+    margin: 0;
+    padding: espacio(4) 0;
+    border: 0;
+  }
+
+  legend {
+    float: left;
+    width: 100%;
+    margin-bottom: espacio(2);
+    font-weight: 800;
+  }
+}
+
+.migas {
+  padding-top: espacio(5);
+  font-size: tam(-1);
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li + li::before {
+    content: "/";
+    margin: 0 espacio(2);
+    color: var(--texto-suave);
+  }
+
+  [aria-current] {
+    color: var(--texto-suave);
+  }
+}
+
+.seccion {
+  padding-block: espacio(8);
+
+  &--oscura {
+    background: var(--superficie);
+  }
+
+  &--roja {
+    @include corte("arriba");
+    background: var(--rojo);
+    color: var(--blanco);
+    padding-top: espacio(9);
+
+    a {
+      color: var(--blanco);
+    }
+  }
+}
+
+.intro-pagina {
+  padding-block: espacio(6) espacio(7);
+
+  h1 {
+    @include titulo(6);
+  }
+
+  p {
+    font-size: tam(1);
+    color: var(--texto-suave);
+  }
+}
+
+.rejilla {
+  @include rejilla;
+}
+
+.pie {
+  padding-block: espacio(7) espacio(5);
+  border-top: $borde solid var(--acento);
+  background: var(--superficie);
+  color: var(--texto-suave);
+  font-size: tam(-1);
+
+  h2 {
+    @include titulo(1);
+    color: var(--texto);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: espacio(2);
+  }
+
+  address {
+    font-style: normal;
+  }
+}
+
+.pie__columnas {
+  @include rejilla(13rem, espacio(6));
+}
+
+.pie__legal {
+  margin-top: espacio(6);
+  padding-top: espacio(4);
+  border-top: 1px solid var(--linea);
+}
+
+// Icon-only on phones (the name stays for screen readers).
+.texto-movil {
+  @include solo-lector;
+
+  @include desde("tablet") {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+}

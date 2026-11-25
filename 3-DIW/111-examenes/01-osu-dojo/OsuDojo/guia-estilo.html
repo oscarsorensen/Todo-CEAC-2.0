@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de estilo · OSU! Dojo</title>
+  <meta name="description" content="Guía de estilo viva de OSU! Dojo: logotipo, paleta con contrastes WCAG, tipografía, espaciado, componentes y tono de voz.">
+  <link rel="canonical" href="https://osudojo.example/guia-estilo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OSU! Dojo">
+  <meta property="og:title" content="Guía de estilo · OSU! Dojo">
+  <meta property="og:description" content="Guía de estilo viva de OSU! Dojo: logotipo, paleta con contrastes WCAG, tipografía, espaciado, componentes y tono de voz.">
+  <meta property="og:url" content="https://osudojo.example/guia-estilo.html">
+  <meta property="og:image" content="https://osudojo.example/img/social.jpg">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="icon" href="img/iconos/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ajustes-inicio.js"></script>
+  <script type="module" src="js/comun.js"></script>
+  <script type="module" src="js/guia.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html"><svg class="kanku" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="13"/><path fill="currentColor" d="M50 2 59 25H41zM50 98 59 75H41z"/><rect fill="currentColor" x="4" y="43" width="16" height="14" rx="2"/><rect fill="currentColor" x="80" y="43" width="16" height="14" rx="2"/></svg><span translate="no">OSU!<b>DOJO</b></span><span class="solo-lector">, ir al inicio</span></a>
+      <button class="boton-cabecera boton-menu" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="horario.html">Horario</a></li>
+        <li><a href="camino.html">El camino</a></li>
+        <li><a href="senseis.html">Senseis</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="temporizador.html">Temporizador</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        </ul>
+      </nav>
+      <button class="boton-cabecera" type="button" aria-expanded="false" aria-controls="ajustes"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="texto-movil">Ajustes</span><span class="solo-lector"> de lectura</span></button>
+      <button class="boton-cabecera" type="button" id="boton-idioma" translate="no" lang="en">EN<span class="solo-lector"> English version</span></button>
+    </div>
+    <div id="ajustes" class="ajustes" hidden>
+      <div class="contenedor">
+        <fieldset>
+          <legend>Ajustes de lectura (se guardan en este navegador)</legend>
+          <label class="opcion"><input type="checkbox" name="texto-grande"> Texto más grande</label>
+          <label class="opcion"><input type="checkbox" name="sin-movimiento"> Menos movimiento</label>
+          <label class="opcion"><input type="checkbox" name="alto-contraste"> Alto contraste</label>
+        </fieldset>
+      </div>
+    </div>
+  </header>
+  <nav class="migas contenedor" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li><span aria-current="page">Guía de estilo</span></li></ol></nav>
+  <main id="contenido" tabindex="-1">
+    <div class="contenedor">
+      <div class="intro-pagina">
+        <h1>Guía de estilo</h1>
+        <p>Las reglas visuales del dojo. Todo sale de los tokens de Sass (<code>scss/_tokens.scss</code>); si cambia aquí, cambia en toda la web.</p>
+      </div>
+
+      <section class="seccion" aria-labelledby="g-marca">
+        <h2 id="g-marca">Marca</h2>
+        <div class="rejilla">
+          <div class="tarjeta"><span class="logo" style="font-size:2.5rem"><svg class="kanku" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="13"/><path fill="currentColor" d="M50 2 59 25H41zM50 98 59 75H41z"/><rect fill="currentColor" x="4" y="43" width="16" height="14" rx="2"/><rect fill="currentColor" x="80" y="43" width="16" height="14" rx="2"/></svg><span>OSU!<b>DOJO</b></span></span>
+            <p>El kanku (símbolo tradicional de Kyokushin) dibujado por nosotros + «OSU!», el saludo que lo dice todo.</p></div>
+          <div class="tarjeta"><p class="lema">No mercy.</p><p>Lemas en Anton con sombra roja desplazada. Solo frases cortas, nunca texto largo.</p></div>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="g-color">
+        <h2 id="g-color">Color</h2>
+        <p>Negro, hueso y rojo: karategi, tatami y energía. El oro marca el foco y los logros. Los contrastes se calculan en directo con la fórmula de WCAG a partir de las variables CSS.</p>
+        <ul class="muestras" id="muestras">
+        <li data-color="negro"><div class="color" style="background: var(--negro)"></div>
+          <div><strong>negro</strong><br><code>#0b0b0b</code><br>Fondo. El tatami de noche.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="carbon"><div class="color" style="background: var(--carbon)"></div>
+          <div><strong>carbon</strong><br><code>#171717</code><br>Superficies: tarjetas, pie.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="acero"><div class="color" style="background: var(--acero)"></div>
+          <div><strong>acero</strong><br><code>#262626</code><br>Líneas y cabeceras de tabla.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="hueso"><div class="color" style="background: var(--hueso)"></div>
+          <div><strong>hueso</strong><br><code>#f3ede2</code><br>Texto principal: el color del karategi.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="gris"><div class="color" style="background: var(--gris)"></div>
+          <div><strong>gris</strong><br><code>#a8a29a</code><br>Texto secundario.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="rojo"><div class="color" style="background: var(--rojo)"></div>
+          <div><strong>rojo</strong><br><code>#d0101b</code><br>Acción y energía. Solo de fondo con texto blanco.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="rojo-vivo"><div class="color" style="background: var(--rojo-vivo)"></div>
+          <div><strong>rojo-vivo</strong><br><code>#ff4b4b</code><br>Enlaces y errores sobre fondo oscuro.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        <li data-color="oro"><div class="color" style="background: var(--oro)"></div>
+          <div><strong>oro</strong><br><code>#f5b301</code><br>Foco, logros, avisos.<br><span class="ratio" data-dinamico>Contraste sobre negro: …</span></div></li>
+        </ul>
+        <h3>Cinturones</h3>
+        <p><span class="cinta cinta--blanco"></span> <span class="cinta cinta--naranja"></span> <span class="cinta cinta--azul"></span> <span class="cinta cinta--amarillo"></span> <span class="cinta cinta--verde"></span> <span class="cinta cinta--marron"></span> <span class="cinta cinta--negro"></span></p>
+      </section>
+
+      <section class="seccion" aria-labelledby="g-tipo">
+        <h2 id="g-tipo">Tipografía</h2>
+        <p><strong>Anton</strong> para títulos: estrecha, pesada, siempre en mayúsculas. <strong>Barlow</strong> para leer: clara y con buena x. Escala modular 1,25.</p>
+        <div class="escala-tipo">
+          <p class="t8" style="font-family:Anton">Osu 8</p><p class="t6" style="font-family:Anton">Kumite 6</p>
+          <p class="t4" style="font-family:Anton">Kata 4</p><p class="t2">Texto destacado (2)</p>
+          <p class="t1">Entradilla (1)</p><p class="t0">Texto normal (0): 16 px, interlineado 1,6.</p><p class="t-1">Notas y pies (−1)</p>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="g-espacio">
+        <h2 id="g-espacio">Espaciado</h2>
+        <p>Base de 4 px. Nada de números mágicos: siempre <code>espacio(n)</code>.</p>
+        <ul class="escala-espacio">
+          <li class="e2"><span></span>2 · 8 px</li><li class="e4"><span></span>4 · 16 px</li><li class="e5"><span></span>5 · 24 px</li>
+          <li class="e6"><span></span>6 · 32 px</li><li class="e7"><span></span>7 · 48 px</li><li class="e8"><span></span>8 · 64 px</li>
+        </ul>
+      </section>
+
+      <section class="seccion" aria-labelledby="g-ilustracion">
+        <h2 id="g-ilustracion">Ilustración</h2>
+        <div class="rejilla">
+          <figure class="arte animado" data-animado>
+            <button class="boton-cabecera boton-pausa" type="button" data-pausa data-dinamico hidden>Pausar animación</button>
+            <svg class="arte-svg" viewBox="0 0 400 300" role="img" aria-label="Un karateka lanza un puñetazo recto y el golpe estalla en dorado." focusable="false"><rect class="arte-fondo" width="400" height="300"/><circle class="arte-sol" cx="210" cy="150" r="100"/><path class="arte-rayos" style="transform-origin:210px 150px" d="M210 150L470 150L465 200.7ZM210 150L450.2 249.5L426.2 294.4ZM210 150L393.8 333.8L354.4 366.2ZM210 150L309.5 390.2L260.7 405ZM210 150L210 410L159.3 405ZM210 150L110.5 390.2L65.6 366.2ZM210 150L26.2 333.8L-6.2 294.4ZM210 150L-30.2 249.5L-45 200.7ZM210 150L-50 150L-45 99.3ZM210 150L-30.2 50.5L-6.2 5.6ZM210 150L26.2 -33.8L65.6 -66.2ZM210 150L110.5 -90.2L159.3 -105ZM210 150L210 -110L260.7 -105ZM210 150L309.5 -90.2L354.4 -66.2ZM210 150L393.8 -33.8L426.2 5.6ZM210 150L450.2 50.5L465 99.3Z"/><path class="arte-linea arte-linea--tsuki" style="animation-delay:0s" d="M230 100L290 100"/><path class="arte-linea arte-linea--tsuki" style="animation-delay:0.25s" d="M225 140L295 140"/><path class="arte-linea arte-linea--tsuki" style="animation-delay:0.5s" d="M240 120L280 120"/><ellipse class="arte-sombra" cx="180" cy="282" rx="70" ry="9"/><g transform="translate(180 198)"><g class="arte-cuerpo"><path d="M0 0L34 34L46 82" stroke-width="17"/><path d="M0 0L-30 40L-58 82" stroke-width="17"/><path d="M0 0L4 -78" stroke-width="28"/><path d="M4 -78L28 -58L40 -80" stroke-width="15"/><circle class="arte-cabeza" cx="10" cy="-102" r="17"/><g class="arte-cinta arte-cinta--marron"><path d="M-16 -6L17 -6" stroke-width="7"/><path d="M10 -6L17 10" stroke-width="5"/></g><g class="arte-tsuki-brazo" style="transform-origin:4px -78px"><path d="M4 -78L-18 -48" stroke-width="15"/><g class="arte-tsuki-antebrazo" style="transform-origin:-18px -48px"><path d="M-18 -48L4 -30" stroke-width="15"/></g></g></g></g><path class="arte-impacto arte-impacto--tsuki" style="transform-origin:262px 120px" d="M262 90L265.7 108.6L279.6 95.7L271.7 112.9L290.5 110.7L274 120L290.5 129.3L271.7 127.1L279.6 144.3L265.7 131.4L262 150L258.3 131.4L244.4 144.3L252.3 127.1L233.5 129.3L250 120L233.5 110.7L252.3 112.9L244.4 95.7L258.3 108.6Z"/></svg>
+            <figcaption>Ejemplo: tsuki (puñetazo recto).</figcaption>
+          </figure>
+          <div>
+            <p>Pictogramas de trazo grueso, sin caras: cuerpo en hueso, sol rojo, rayos que giran, impactos y líneas de velocidad en oro, fondo de trama como un cartel de combate.</p>
+            <ul>
+              <li>SVG dentro del HTML: se ve nítido en cualquier pantalla y pesa muy poco.</li>
+              <li>Los colores salen de las variables CSS, así que el alto contraste también cambia los dibujos.</li>
+              <li>Se mueven con animaciones CSS: cada bloque tiene botón de pausa y «Menos movimiento» las para todas.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="g-componentes">
+        <h2 id="g-componentes">Componentes</h2>
+        <div class="acciones">
+          <button class="boton" type="button">Principal</button>
+          <button class="boton--oro" type="button">Destacado</button>
+          <button class="boton--borde" type="button">Secundario</button>
+          <button class="boton" type="button" disabled>Desactivado</button>
+        </div>
+        <div class="rejilla seccion">
+          <div class="campo"><label for="g-input">Campo de texto</label><input id="g-input" type="text" placeholder="Escribe aquí"><p class="ayuda">Texto de ayuda.</p></div>
+          <div class="campo"><label for="g-error">Campo con error</label><input id="g-error" type="email" aria-invalid="true" aria-describedby="g-error-msg" value="sin arroba"><p class="error" id="g-error-msg">Falta la arroba del correo.</p></div>
+          <div class="campo"><span>Etiquetas</span><p><span class="etiqueta">Iniciación</span> <span class="etiqueta etiqueta--hoy">Hoy</span></p></div>
+        </div>
+        <article class="tarjeta"><h3>Tarjeta</h3><p>Borde superior rojo, superficie carbón, radio de 4 px.</p></article>
+      </section>
+
+      <section class="seccion" aria-labelledby="g-tono">
+        <h2 id="g-tono">Tono de voz</h2>
+        <p>Directo, con humor y algo chulo. Nos reímos de las excusas, nunca de las personas.</p>
+        <div class="si-no">
+          <div><h3>Sí</h3><ul><li>«Las excusas no son un color de cinturón.»</li><li>«Si llegas tarde, flexiones.»</li><li>«Ven, si te atreves.»</li></ul></div>
+          <div><h3>No</h3><ul><li>Insultar o burlarse del físico de nadie.</li><li>Prometer resultados («adelgaza 10 kilos»).</li><li>Humor en errores de formulario: ahí, claridad.</li></ul></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>OSU! Dojo</h2>
+          <p>Karate Kyokushin en Valencia desde que alguien dijo «mañana empiezo» y no empezó.</p>
+        </div>
+        <div>
+          <h2>Dónde</h2>
+          <address>Carrer del Kiai, 7<br>46020 València<br><a href="tel:+34960000000">960 000 000</a><br><a href="mailto:hola@osudojo.example">hola@osudojo.example</a></address>
+        </div>
+        <div>
+          <h2>Más</h2>
+          <ul>
+            <li><a href="guia-estilo.html">Guía de estilo</a></li>
+            <li><a href="accesibilidad.html">Accesibilidad</a></li>
+            <li><a href="creditos.html">Créditos y licencias</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">Dojo ficticio: proyecto de Diseño de Interfaces Web (DAW2, CEAC) de Oscar Sorensen. Ilustraciones y sonidos propios, ver <a href="creditos.html">créditos</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
