@@ -9,7 +9,7 @@ Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer,
 | `Tema_2_English.pdf`, `Tema_3_English.pdf`, `Tema_4_English.pdf` | Your main reading: every slide in English plus "Explained:" sections. | – |
 | Original slides (Tema 2, 3, 4) | A quick skim after the English section, to learn the Spanish wording used in the exam. If they disagree with the English PDFs, the slides win. | – |
 | `ejercicios.js` | Learn by writing code. There are 46 tasks; you write the code and the file checks it. | `node ejercicios.js tema2` / `node ejercicios.js 17` |
-| `quiz.js` | Practise the exam format. One question at a time, with exam scoring, and the code is actually run after you answer. | `node quiz.js tema3` / `node quiz.js 15` |
+| `quiz.js` | Practise the exam format. One question at a time, with exam scoring, and the code is actually run after you answer. 78 short exam-style questions by default; `hard` gives 49 longer ones that combine ideas. | `node quiz.js tema3` / `node quiz.js 15` / `node quiz.js hard tema2` |
 | `soluciones.js` | Only when you're stuck after really trying. | `node ejercicios.js --soluciones` |
 
 ## Daily routine (1.5 to 2 hours)
@@ -29,7 +29,7 @@ Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer,
 | Fri 27 | Classes, inheritance, built-in objects, Date, String, Math | Tema 3, pages 1–7 (sections 1–6) | Tema 3, slides 3–11 | 15–25 | `node quiz.js tema3 10` |
 | Sat 28 | URL, window, timers, dialogs, document, generating HTML, window.open, events, storage | Tema 3, pages 7–18 (sections 7–23) | Tema 3, slides 12–31 | 26–30 | `node quiz.js tema3` |
 | Sun 29 | Arrays, array methods, sort, map/filter/reduce, objects | Tema 4, pages 5–15 (sections 7–19) | Tema 4, slides 9–21 | 34–46 | `node quiz.js tema4` |
-| Mon 30 | Full mock exam, then review everything you missed in the English PDF section it points to | – | – | Redo any FAIL | `node quiz.js` (all 49) |
+| Mon 30 | Full mock exam, then review everything you missed in the English PDF section it points to | – | – | Redo any FAIL | `node quiz.js 40` as the mock exam, then `node quiz.js hard` |
 | Tue 1 | 20 minutes on your summaries plus this cheat sheet. Nothing new. | – | – | – | `node quiz.js 10` |
 
 Each section heading in the English PDFs includes its slide number. When quiz.js or ejercicios.js tells you to review a slide, find the section with that slide number.
