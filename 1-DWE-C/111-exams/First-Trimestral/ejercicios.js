@@ -19,17 +19,18 @@
 // This should return 1 but throws an error. Fix it by changing one word.
 function arreglarConst() {
   const contador = 0;
-  contador = contador + 1;
-  return contador;
+  total = contador + 1;
+  return total;
 }
 
 // 2. [BUG] Tema 2, slides 3-5
 // mayorDeEdad(20) should return "adulto" and mayorDeEdad(15) "menor". It throws an error. Why?
 function mayorDeEdad(edad) {
+  let mensaje;
   if (edad >= 18) {
-    let mensaje = "adulto";
+    mensaje = "adulto";
   } else {
-    let mensaje = "menor";
+    mensaje = "menor";
   }
   return mensaje;
 }
@@ -38,14 +39,17 @@ function mayorDeEdad(edad) {
 // Return the type of the value like typeof does, but "null" for null and "array" for arrays.
 // tipoReal(5) -> "number"   tipoReal(null) -> "null"   tipoReal([1]) -> "array"   tipoReal({}) -> "object"
 function tipoReal(valor) {
-  // TODO
+  if (valor === null) return "null";
+  if (Array.isArray(valor)) return "array";
+  return typeof valor;
 }
+
 
 // 4. Tema 2, slides 13-14
 // Two numbers arrive as text (for example from a form). Return their real sum as a number.
 // sumarTextos("5", "7") -> 12   (not "57")
 function sumarTextos(a, b) {
-  // TODO
+  return (Number(a) + Number(b))
 }
 
 // 5. Tema 2, slide 14
@@ -53,20 +57,22 @@ function sumarTextos(a, b) {
 // leerPixeles("250px") -> 250   leerPixeles("12.7px") -> 12   leerPixeles("px") -> 0
 // Hint: parseInt with base 10, and Number.isNaN to detect failure.
 function leerPixeles(texto) {
-  // TODO
+  const numero = parseInt(texto, 10);
+  if (Number.isNaN(numero)) return 0;
+  return numero;
 }
 
 // 6. Tema 2, slide 14
 // true only if the WHOLE text is a number. Careful: Number("") is 0.
 // esNumeroValido("42") -> true   esNumeroValido("42px") -> false   esNumeroValido("") -> false
 function esNumeroValido(texto) {
-  // TODO
+  return texto.trim() !="" && !Number.isNaN(Number(texto));
 }
 
 // 7. Tema 2, slides 16 and 22
 // Return "par" or "impar". Use the % operator and the ternary operator (?:), no if.
 function parOImpar(numero) {
-  // TODO
+  return numero % 2 == 0 ? "par" : "impar";
 }
 
 // 8. Tema 2, slide 25

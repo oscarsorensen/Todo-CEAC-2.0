@@ -22,15 +22,56 @@ Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer,
 
 ## Plan
 
-| Day | Topic | English PDF | Original slides | Exercises | Quiz |
-|---|---|---|---|---|---|
-| Wed 25 | Variables, scope, hoisting, types, conversion, operators | Tema 2, pages 1–13 (sections 1–21) | Tema 2, slides 3–25 | 1–8 | `node quiz.js tema2 7` |
-| Thu 26 | Switch, loops, break and continue; built-in functions, ways to write functions, parameters, callbacks | Tema 2, pages 13–18 (sections 22–31); Tema 4, pages 1–5 (sections 1–6) | Tema 2, slides 26–37; Tema 4, slides 3–8 | 9–14, 31–33 | `node quiz.js tema2` |
-| Fri 27 | Classes, inheritance, built-in objects, Date, String, Math | Tema 3, pages 1–7 (sections 1–6) | Tema 3, slides 3–11 | 15–25 | `node quiz.js tema3 10` |
-| Sat 28 | URL, window, timers, dialogs, document, generating HTML, window.open, events, storage | Tema 3, pages 7–18 (sections 7–23) | Tema 3, slides 12–31 | 26–30 | `node quiz.js tema3` |
-| Sun 29 | Arrays, array methods, sort, map/filter/reduce, objects | Tema 4, pages 5–15 (sections 7–19) | Tema 4, slides 9–21 | 34–46 | `node quiz.js tema4` |
-| Mon 30 | Full mock exam, then review everything you missed in the English PDF section it points to | – | – | Redo any FAIL | `node quiz.js 40` as the mock exam, then `node quiz.js hard` |
-| Tue 1 | 20 minutes on your summaries plus this cheat sheet. Nothing new. | – | – | – | `node quiz.js 10` |
+### Wed 25 (done)
+
+- Topic: Variables, scope, hoisting, types, conversion, operators
+- English PDF: Tema 2, pages 1–13 (sections 1–21)
+- Original slides: Tema 2, slides 3–25
+- Exercises: 1–8
+- Quiz: `node quiz.js tema2 7`
+
+### Thu 26
+
+- Topic: Finish Tema 2 (comments, statements, if/else, switch, loops, break and continue), then start Tema 3: classes, inheritance, built-in objects, JSON.
+- English PDF: Tema 2, pages 13–18 (sections 22–31); Tema 3, pages 1–3 (sections 1–3)
+- Original slides: Tema 2, slides 26–37; Tema 3, slides 3–5
+- Exercises: 9–16, and 25
+- Quiz: `node quiz.js tema2`, then `node quiz.js tema3 5`
+
+### Fri 27
+
+- Topic: Date, String, Math, then the start of the browser part: the browser objects, URL, window properties and methods, timers, alert/confirm/prompt.
+- English PDF: Tema 3, pages 4–11 (sections 4–13)
+- Original slides: Tema 3, slides 6–18
+- Exercises: 17–24, and 26–29
+- Quiz: `node quiz.js tema3 10`
+
+### Sat 28
+
+- Topic: Finish Tema 3 (document, generating HTML, window appearance, window.open, communication between windows, events, cookies, storage), then start Tema 4: built-in functions, defining and calling functions, callbacks.
+- English PDF: Tema 3, pages 12–18 (sections 14–23); Tema 4, pages 1–5 (sections 1–6)
+- Original slides: Tema 3, slides 19–31; Tema 4, slides 3–8
+- Exercises: 30, and 31–33
+- Quiz: `node quiz.js tema3`, then `node quiz.js tema4 5`
+
+### Sun 29
+
+- Topic: Rest of Tema 4: arrays, array methods, sort, map/filter/reduce, objects, properties.
+- English PDF: Tema 4, pages 5–15 (sections 7–19)
+- Original slides: Tema 4, slides 9–21
+- Exercises: 34–46
+- Quiz: `node quiz.js tema4`
+
+### Mon 30
+
+- Topic: Full mock exam, then review everything you missed in the English PDF section it points to
+- Exercises: redo any FAIL
+- Quiz: `node quiz.js 40` as the mock exam, then `node quiz.js hard`
+
+### Tue 1
+
+- Topic: Exam day. 20 minutes on your summaries plus this cheat sheet. Nothing new.
+- Quiz: `node quiz.js 10`
 
 Each section heading in the English PDFs includes its slide number. When quiz.js or ejercicios.js tells you to review a slide, find the section with that slide number.
 

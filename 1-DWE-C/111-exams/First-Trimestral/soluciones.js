@@ -19,6 +19,7 @@ function mayorDeEdad(edad) {
   return mensaje;
 }
 
+
 function tipoReal(valor) {
   if (valor === null) return "null";
   if (Array.isArray(valor)) return "array";
