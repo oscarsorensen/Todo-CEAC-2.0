@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /herramientas/
-Sitemap: https://osudojo.example/sitemap.xml

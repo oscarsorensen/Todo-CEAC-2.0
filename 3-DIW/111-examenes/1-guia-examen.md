@@ -15,15 +15,17 @@ Outline only. No finished paragraphs: I write the text myself in the exam.
 | File | Project | Leads with |
 |---|---|---|
 | `01-osu-dojo.md` | OSU! Dojo (Kyokushin karate dojo website) | C1 Architecture (Sass design system) + C5 Infrastructure (media pipeline) |
+| `02-tornillo-oxidado.md` | Tornillo Oxidado (fictitious instrumental metal band) | C5 Infrastructure (synthesised music + own player) + C3 Verification (accessible custom widgets) |
 
-Project: `111-examenes/01-osu-dojo/OsuDojo/`. Static site, no login. Run with `php -S 127.0.0.1:8770` from that folder (or Apache) and open `index.html`.
+Projects: `111-examenes/01-osu-dojo/OsuDojo/` and `111-examenes/02-tornillo-oxidado/TornilloOxidado/`. Static sites, no login. Run the dojo with `php -S 127.0.0.1:8770` from its folder, the band with `php -S 127.0.0.1:8771 herramientas/servidor.php` (the router adds the Range support the songs need), or use Apache; open `index.html`.
 
-The outline has a companion in `guides/01-osu-dojo-guide.md`: what the article shows and why, a paragraph plan and timing, then per rubric section a What/Why/How box, "Write about / Tip / Avoid" per bullet and a checklist. For studying only; the one-page outline is what goes into the exam.
+Each outline has a companion in `guides/` (`01-osu-dojo-guide.md`, `02-tornillo-oxidado-guide.md`): what the article shows and why, a paragraph plan and timing, then per rubric section a What/Why/How box, "Write about / Tip / Avoid" per bullet and a checklist. For studying only; the one-page outline is what goes into the exam.
 
 ---
 
 ## Exam format
-- **1 article** (post) on red.jocarsa.com instead of 4: one project, written properly
+- Two projects prepared (Oscar, 2026-11-26: a second one is expected). Still to confirm: one article per project, or one article about one of them
+- Article (post) on red.jocarsa.com: one project per article, written properly
 - Article: 4–6 paragraphs + 1–3 min silent screen-capture video of the same project
 - Assumed: same 90 min and same rubric as Servidor. Confirm in class (open questions)
 - The article must stand on its own and also work as a LinkedIn / portfolio post
@@ -63,7 +65,7 @@ Notes
 Plenty of time compared to Servidor: use it for quality (concrete evidence, numbers, honest limits), not length.
 
 ## Open questions to ask (DIW teacher)
-- Is it really 1 project for DIW? Same 90 min? Same extended rubric?
+- 2 projects for DIW: one article each, or pick one? Same 90 min? Same extended rubric?
 - Exam date for DIW?
 - Can the video be recorded beforehand and only uploaded?
 - Does documentacion.jocarsa.com accept a static HTML/CSS/JS project, and which files does it include?
