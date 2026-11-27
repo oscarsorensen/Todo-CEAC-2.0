@@ -11,6 +11,8 @@
 //   node quiz.js tema4 8    combine both
 //   node quiz.js hard       hard set (also works with tema and number: node quiz.js hard tema2 5)
 //   node quiz.js all        both sets mixed
+//   node quiz.js tema3 slides=3-5    only the questions from slides 3 to 5 (what you have read so far)
+//   node quiz.js tema2 8 slides=26-37  combine all of it
 //
 // Answer with a, b, c or d. Press Enter with no letter to leave it blank. Type q to stop.
 // Scoring works like the exam: +1 correct, -0.10 wrong, 0 blank.
@@ -632,6 +634,44 @@ const preguntasExamen = [
   q(2, 26, "How do you write a comment that spans several lines?", null, ["/* ... */", "// ...", "<!-- ... -->", "# ..."],
     "// is for one line, /* */ for several lines."),
 
+  // ---- Tema 2, slides 25-37 (added: truth tables, if/else, switch, loops, break/continue) ----
+  q(2, 25, R, `return true && false;`, ["false", "true", "undefined", "Error (TypeError)"],
+    "&& is true only if both sides are true."),
+  q(2, 25, R, `return false || "hola";`, ['"hola"', "false", "true", "undefined"],
+    "|| returns the first truthy operand; if there is none, the last one."),
+  q(2, 20, R, `return 7 + 4;`, ["11", '"74"', "3", "NaN"],
+    "Two numbers: + adds them. It only concatenates when one side is a string."),
+  q(2, 28, R, `const n = 5;\nlet r;\nif (n > 3) r = "a";\nelse if (n > 1) r = "b";\nelse r = "c";\nreturn r;`, ['"a"', '"b"', '"ab"', '"c"'],
+    "Only the first block whose condition is true runs, even if later ones are also true."),
+  q(2, 29, R, `let s = "";\nswitch (1) {\n  case 1: s += "a";\n  case 2: s += "b"; break;\n  case 3: s += "c";\n}\nreturn s;`, ['"ab"', '"a"', '"abc"', '"b"'],
+    "Without break, execution falls through into the next case until a break appears."),
+  q(2, 30, R, `switch ("2") {\n  case 2: return "number";\n  default: return "default";\n}`, ['"default"', '"number"', "undefined", "Error (TypeError)"],
+    "switch compares with ===, so the text \"2\" does not match the number 2."),
+  q(2, 31, R, `let c = 0;\nfor (let i = 0; i < 3; i++) {\n  c += i;\n}\nreturn c;`, ["3", "6", "2", "0"],
+    "i takes 0, 1, 2 (3 is not < 3): 0 + 1 + 2 = 3."),
+  q(2, 33, R, `for (const i in ["a", "b"]) {\n  return i;\n}`, ['"0"', '"a"', "0", "Error (TypeError)"],
+    "for...in on an array gives the indexes as text: \"0\", \"1\"."),
+  q(2, 33, R, `const m = { marca: "Honda", cc: 125 };\nfor (const k in m) {\n  return m[k];\n}`, ['"Honda"', '"marca"', "125", "Error (TypeError)"],
+    "k is the key (\"marca\" in the first round); m[k] looks up the value stored under that key."),
+  q(2, 33, R, `const o = { a: 1 };\nfor (const x of o) {}\nreturn "ok";`, ["Error (TypeError)", '"ok"', "undefined", "Error (ReferenceError)"],
+    "A plain object is not iterable: for...of on it throws a TypeError."),
+  q(2, 34, R, `let n = 5;\nlet veces = 0;\nwhile (n < 3) {\n  veces++;\n  n++;\n}\nreturn veces;`, ["0", "1", "2", "Error (ReferenceError)"],
+    "while checks the condition first: false from the start means zero rounds."),
+  q(2, 35, R, `let n = 5;\nlet veces = 0;\ndo {\n  veces++;\n  n++;\n} while (n < 3);\nreturn veces;`, ["1", "0", "2", "Error (SyntaxError)"],
+    "do-while runs the body once before checking the condition."),
+  q(2, 36, R, `let c = 0;\nfor (let i = 0; i < 5; i++) {\n  if (i === 2) break;\n  c++;\n}\nreturn c;`, ["2", "4", "5", "3"],
+    "break ends the whole loop at i = 2, after the rounds i = 0 and i = 1."),
+  q(2, 36, R, `let c = 0;\nfor (let i = 0; i < 4; i++) {\n  if (i === 2) continue;\n  c++;\n}\nreturn c;`, ["3", "2", "4", "1"],
+    "continue skips only the current round (i = 2); the loop goes on: 4 rounds - 1 = 3."),
+  q(2, 36, R, `let c = 0;\nfor (let i = 1; i <= 5; i++) {\n  if (i % 2 === 0) continue;\n  c++;\n}\nreturn c;`, ["3", "2", "5", "0"],
+    "i % 2 === 0 means even; those rounds are skipped, so only 1, 3 and 5 are counted."),
+  q(2, 37, "What does a breakpoint do in DevTools?", null,
+    ["Pauses the code at that line so you can inspect the variables", "Deletes the line from the code", "Stops the page from loading", "Hides console.log output"],
+    "A breakpoint (or the debugger; statement) pauses execution so you can inspect the values."),
+  q(2, 4, "A counter starts at 0 and gets a new value in every round of a loop. Which declaration is best?", null,
+    ["let, because its value is reassigned", "const, because it is faster", "const, because it never changes", "var, because it is the only one that can change"],
+    "let (or var) allows reassignment; const does not. let is preferred because it has block scope."),
+
   // ===== TEMA 3 =====
   q(3, 3, "Which keyword creates an object from a class?", null, ["new", "create", "this", "class"],
     "Instantiating means creating an object with new: new Contacto(...)."),
@@ -698,6 +738,43 @@ const preguntasExamen = [
   q(3, 12, "Which object represents the current address and lets you navigate by changing it?", null,
     ["location", "history", "navigator", "screen"],
     "history is the tab's history, navigator is browser info, screen is the device screen."),
+
+  // ---- Tema 3, slides 3-5 (added: classes, inheritance, native objects) ----
+  q(3, 3, R, `class A {\n  constructor(n) { this.n = n; }\n}\nreturn new A("x").n;`, ['"x"', "undefined", "null", "Error (TypeError)"],
+    "The constructor stores the argument in the new object with this.n = n."),
+  q(3, 3, R, `class A {\n  constructor(n) { this.n = n; }\n  dime() { return n; }\n}\nreturn new A("x").dime();`, ["Error (ReferenceError)", '"x"', "undefined", "null"],
+    "Inside a method you must write this.n; plain n does not exist there."),
+  q(3, 3, "Complete the class so that new Producto(\"pan\", 100).conIva() returns 121:\n\n    class Producto {\n      constructor(nombre, precio) {\n        (A).nombre = nombre;\n        (A).precio = precio;\n      }\n      conIva() {\n        (B) (A).precio * 1.21;\n      }\n    }\n\n    const p = (C) Producto(\"pan\", 100);", null,
+    ["A = this, B = return, C = new", "A = this, B = return, C = class", "A = self, B = return, C = new", "A = this, B = print, C = new"],
+    "this refers to the object, return gives back the value, and new creates the object."),
+  q(3, 4, R, `class A { hola() { return "A"; } }\nclass B extends A {}\nreturn new B().hola();`, ['"A"', '"B"', "undefined", "Error (TypeError)"],
+    "B inherits hola() from A with extends."),
+  q(3, 4, R, `class A { hola() { return "A"; } }\nclass B extends A { hola() { return "B"; } }\nreturn new B().hola();`, ['"B"', '"A"', '"AB"', "undefined"],
+    "A method in the child overrides the parent's method."),
+  q(3, 4, "In the constructor of a child class, what must you call before using this?", null,
+    ["super(...)", "extends(...)", "parent(...)", "new(...)"],
+    "super(...) runs the parent's constructor and must come before this."),
+  q(3, 4, "Which feature lets different objects answer the same method each in its own way?", null,
+    ["Polymorphism", "Encapsulation", "Inheritance", "Instantiation"],
+    "Polymorphism = many shapes: the same call, a different answer for each class."),
+  q(3, 4, "Which convention does the slide use for the internal properties of an object (encapsulation)?", null,
+    ["Names starting with _ plus getters", "Names in UPPERCASE", "Names ending in ()", "Names starting with new"],
+    "Encapsulation: properties like _balance, exposed through getters."),
+  q(3, 5, R, `return Boolean(0);`, ["false", "true", "0", "undefined"],
+    "0 is falsy."),
+  q(3, 5, R, `return Boolean("0");`, ["true", "false", '"0"', "0"],
+    "Any non-empty text is truthy, even \"0\"."),
+  q(3, 5, R, `return JSON.parse('{"a": 1}').a;`, ["1", '"1"', "undefined", "Error (SyntaxError)"],
+    "JSON.parse turns JSON text into an object."),
+  q(3, 17, "const id = setInterval(() => { n++; if (n === 5) clearInterval(id); }, 500);\nn starts at 0. How long until the interval stops?", null,
+    ["2.5 seconds", "2 seconds", "5 seconds", "0.5 seconds"],
+    "It runs every 500 ms and stops on the 5th run: 5 x 0.5 s = 2.5 s."),
+
+  // ---- Tema 4 (added: reduce and nested arrays, from the real test) ----
+  q(4, 17, R, `return [2, 3, 4].reduce((a, b) => a + b, 0);`, ["9", "24", "[2, 3, 4]", "0"],
+    "reduce accumulates: 0 + 2 + 3 + 4 = 9."),
+  q(4, 10, R, `const m = [[1, 2], [3, 4]];\nreturn m[0][1];`, ["2", "3", "1", "[1, 2]"],
+    "m[0] is the first row [1, 2]; [1] is its second element, 2."),
 
   // ===== TEMA 4 =====
   q(4, 3, R, `return isNaN("12");`, ["false", "true", "12", "NaN"],
@@ -851,11 +928,22 @@ async function main() {
 
   const filtroTema = argumentos.find((a) => /^tema[234]$/.test(a));
   const limite = parseInt(argumentos.find((a) => /^\d+$/.test(a)), 10);
+  const rango = argumentos.map((a) => a.match(/^slides=(\d+)-(\d+)$/)).find(Boolean);
 
   let seleccion = preguntasExamen;
   if (argumentos.includes("hard")) seleccion = preguntasDificiles;
   if (argumentos.includes("all")) seleccion = preguntasExamen.concat(preguntasDificiles);
   if (filtroTema) seleccion = seleccion.filter((p) => p.tema === Number(filtroTema.slice(4)));
+  if (rango) {
+    const desde = Number(rango[1]);
+    const hasta = Number(rango[2]);
+    seleccion = seleccion.filter((p) => p.slide >= desde && p.slide <= hasta);
+    if (seleccion.length === 0) {
+      console.log(`No questions found for slides ${desde}-${hasta}.`);
+      process.exit(0);
+    }
+    console.log(`Only slides ${desde}-${hasta}: ${seleccion.length} question(s) available.`);
+  }
   seleccion = barajar(seleccion);
   if (limite) seleccion = seleccion.slice(0, limite);
 

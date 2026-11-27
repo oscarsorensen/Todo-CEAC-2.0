@@ -9,8 +9,9 @@ Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer,
 | `Tema_2_English.pdf`, `Tema_3_English.pdf`, `Tema_4_English.pdf` | Your main reading: every slide in English plus "Explained:" sections. | – |
 | Original slides (Tema 2, 3, 4) | A quick skim after the English section, to learn the Spanish wording used in the exam. If they disagree with the English PDFs, the slides win. | – |
 | `ejercicios.js` | Learn by writing code. There are 46 tasks; you write the code and the file checks it. | `node ejercicios.js tema2` / `node ejercicios.js 17` |
-| `quiz.js` | Practise the exam format. One question at a time, with exam scoring, and the code is actually run after you answer. 78 short exam-style questions by default; `hard` gives 49 longer ones that combine ideas. | `node quiz.js tema3` / `node quiz.js 15` / `node quiz.js hard tema2` |
-| `soluciones.js` | Only when you're stuck after really trying. | `node ejercicios.js --soluciones` |
+| `quiz.js` | Practise the exam format. One question at a time, with exam scoring, and the code is actually run after you answer. 112 short exam-style questions by default; `hard` gives 49 longer ones that combine ideas. Add `slides=A-B` to get only the slides you have read so far. | `node quiz.js tema3` / `node quiz.js 15` / `node quiz.js tema3 slides=3-5` / `node quiz.js hard tema2` |
+| `pistas.js` | Hints for each exercise in 3 levels: an idea, then a half-written function, then that exercise's solution only. Use it before opening soluciones.js. | `node pistas.js 17` / `node pistas.js 17 2` / `node pistas.js 17 3` |
+| `soluciones.js` | All the solutions. Only when the hints were not enough. | `node ejercicios.js --soluciones` |
 
 ## Daily routine (1.5 to 2 hours)
 
@@ -30,21 +31,21 @@ Exam: Tuesday 1 December. It's multiple choice (a/b/c/d), +1 per correct answer,
 - Exercises: 1–8
 - Quiz: `node quiz.js tema2 7`
 
-### Thu 26
+### Thu 26 (done)
 
 - Topic: Finish Tema 2 (comments, statements, if/else, switch, loops, break and continue), then start Tema 3: classes, inheritance, built-in objects, JSON.
 - English PDF: Tema 2, pages 13–18 (sections 22–31); Tema 3, pages 1–3 (sections 1–3)
 - Original slides: Tema 2, slides 26–37; Tema 3, slides 3–5
 - Exercises: 9–16, and 25
-- Quiz: `node quiz.js tema2`, then `node quiz.js tema3 5`
+- Quiz: `node quiz.js tema2 slides=26-37`, then `node quiz.js tema3 5 slides=3-5`
 
-### Fri 27
+### Fri 27 (done)
 
 - Topic: Date, String, Math, then the start of the browser part: the browser objects, URL, window properties and methods, timers, alert/confirm/prompt.
 - English PDF: Tema 3, pages 4–11 (sections 4–13)
 - Original slides: Tema 3, slides 6–18
 - Exercises: 17–24, and 26–29
-- Quiz: `node quiz.js tema3 10`
+- Quiz: `node quiz.js tema3 10 slides=6-18`
 
 ### Sat 28
 

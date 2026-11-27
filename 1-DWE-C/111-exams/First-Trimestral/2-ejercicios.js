@@ -96,13 +96,16 @@ function precioEntrada(tipo) {
   switch (tipo) {
     case "niño":
       precio = 5;
+      break;
     case "jubilado":
       precio = 6;
       break;
     case "adulto":
       precio = 10;
+      break;
     default:
       precio = 0;
+    
   }
   return precio;
 }
@@ -110,8 +113,13 @@ function precioEntrada(tipo) {
 // 11. Tema 2, slides 31-32
 // Return 1 + 2 + ... + numero using a for loop.   sumarHasta(5) -> 15   sumarHasta(0) -> 0
 function sumarHasta(numero) {
-  // TODO
+  let suma = 0;
+  for (let i=1; i<=numero; i++){
+    suma += i;
+  }
+  return suma;
 }
+
 
 // 12. Tema 2, slide 33
 // Use for...in to return an array of "clave=valor" texts.
